@@ -1,0 +1,41 @@
+ion-header{
+    ion-toolbar{
+        // --background:black;
+        --color:white;
+        ion-icon{
+            font-size: 22px;
+        }
+        ion-title{
+            text-align: center;
+            margin-left: 46px;
+        }
+        ion-buttons{
+            ion-icon{
+                font-size: 22px;
+            }
+            ion-badge{
+                position: absolute;
+                right: 3px;
+                bottom: 14px;
+            }
+        }
+    }
+}
+ion-content{
+    .swiper-slide {
+        width: 40%;
+      }
+    app-product{
+        width: 100%;
+    }
+    ion-fab{
+        position: fixed;
+        ion-fab-button{
+            // --background: black;
+            --color: white;
+            ion-icon{
+                font-size: 20px;
+            }
+        }
+    }
+}

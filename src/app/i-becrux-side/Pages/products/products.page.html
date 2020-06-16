@@ -1,0 +1,339 @@
+<ion-header class="products-header">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button fill="clear" routerLink="/bs-home" routerDirection="backward">
+                <ion-icon class="back-icon" slot="icon-only" src="assets/custom-icon-tc-shop/back.svg"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title class="ecom-title"> {{'Shop'| translate }} </ion-title>
+        <ion-buttons slot="end">
+            <ion-button fill="clear" (click)="goToCartPage()">
+                <ion-icon class="cart-badge" name="cart"></ion-icon>
+                <ion-badge>0</ion-badge>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+
+    <ion-toolbar class="segmentToolbar">
+        <ion-segment [(ngModel)]="scrollSegments" scrollable>
+            <ion-segment-button value="all">All</ion-segment-button>
+            <ion-segment-button value="tops">Tops </ion-segment-button>
+            <ion-segment-button value="bottoms">Bottoms</ion-segment-button>
+            <ion-segment-button value="Shirtss"> Shirts</ion-segment-button>
+            <ion-segment-button value="winter">Winter Wear</ion-segment-button>
+            <ion-segment-button value="shoes">Shoes</ion-segment-button>
+            <ion-segment-button value="watches">Watches</ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" id="productContent" class="products-content content-bg-becrux">
+    <!-- scrollable segment divisions -->
+    <div [ngSwitch]="scrollSegments">
+        <div *ngSwitchCase="'all'">
+            <ion-grid no-padding *ngIf="productView=='grid'" class="animated fadeIn fast">
+                <ion-row no-padding>
+                    <ion-col *ngFor="let p of products" size="6" no-padding>
+                        <app-product [data]="p" [type]="'normal'"></app-product>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <ion-list class="list-view" *ngIf="productView=='list'" class="animated fadeIn fast">
+                <ion-item *ngFor="let p of products" lines="none" class="animated fadeIn fast list content-bg-becrux">
+                    <ion-thumbnail slot="start">
+                        <ion-img class="badge-img" src="assets/template-themes/becrux/badge_new.png"></ion-img>
+                        <img src="{{p.img}}">
+                    </ion-thumbnail>
+                    <ion-label>
+                        <p>{{p.name}}</p>
+                        <p class="name-para"><del>{{p.dPrice}}$</del></p>
+                        <p class="name-para"> {{p.price}}$</p>
+                    </ion-label>
+                    <ion-icon class="theme-icon" (click)="onIconClick(p)" name="heart-empty"></ion-icon>
+                    <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="p.fav" name="heart"></ion-icon>
+                    <div class="sale">SALE</div>
+                    <div class="featured">FEATURED</div>
+                </ion-item>
+            </ion-list>
+            <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn fast">
+                <h6 text-center>{{'No Products Found!'|translate}}</h6>
+            </ion-col>
+        </div>
+        <div *ngSwitchCase="'tops'">
+            <ion-grid no-padding *ngIf="productView=='grid'" class="animated fadeIn fast">
+                <ion-row no-padding>
+                    <ion-col *ngFor="let p of products" size="6" no-padding>
+                        <app-product [data]="p" [type]="'normal'"></app-product>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <ion-list class="list-view" *ngIf="productView=='list'">
+
+                <ion-item *ngFor="let p of products" lines="none" class="animated fadeIn fast list content-bg-becrux">
+                    <ion-thumbnail slot="start">
+                        <ion-img class="badge-img" src="assets/template-themes/becrux/badge_new.png"></ion-img>
+                        <img src="{{p.img}}">
+                    </ion-thumbnail>
+                    <ion-label>
+                        <p>{{p.name}}</p>
+                        <p class="name-para"><del>{{p.dPrice}}$</del></p>
+                        <p class="name-para"> {{p.price}}$</p>
+                    </ion-label>
+                    <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="!p.fav" name="heart-empty"></ion-icon>
+                    <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="p.fav" name="heart"></ion-icon>
+                    <div class="sale">SALE</div>
+                    <div class="featured">FEATURED</div>
+                </ion-item>
+            </ion-list>
+            <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn fast">
+                <h6 text-center>{{'No Products Found!'|translate}}</h6>
+            </ion-col>
+        </div>
+
+        <div *ngSwitchCase="'bottoms'">
+            <ion-grid no-padding *ngIf="productView=='grid'" class="animated fadeIn fast">
+                <ion-row no-padding>
+                    <ion-col *ngFor="let p of products" size="6" no-padding>
+                        <app-product [data]="p" [type]="'normal'"></app-product>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <ion-list class="list-view" *ngIf="productView=='list'">
+
+                <ion-item *ngFor="let p of products" class="list" lines="none" class="animated fadeIn fast">
+                    <ion-thumbnail slot="start">
+                        <ion-img class="badge-img" src="assets/template-themes/becrux/badge_new.png"></ion-img>
+                        <img src="{{p.img}}">
+                    </ion-thumbnail>
+                    <ion-label>
+                        <p>{{p.name}}</p>
+                        <p class="name-para"><del>{{p.dPrice}}$</del></p>
+                        <p class="name-para"> {{p.price}}$</p>
+                    </ion-label>
+                    <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="!p.fav" name="heart-empty"></ion-icon>
+                    <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="p.fav" name="heart"></ion-icon>
+                    <div class="sale">SALE</div>
+                    <div class="featured">FEATURED</div>
+                </ion-item>
+            </ion-list>
+            <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn fast">
+                <h6 text-center>{{'No Products Found!'|translate}}</h6>
+            </ion-col>
+        </div>
+
+        <div *ngSwitchCase="'Shirtss'">
+            <ion-grid no-padding *ngIf="productView=='grid'" class="animated fadeIn fast">
+                <ion-row no-padding>
+                    <ion-col *ngFor="let p of products" size="6" no-padding>
+                        <app-product [data]="p" [type]="'normal'"></app-product>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <ion-list class="list-view" *ngIf="productView=='list'">
+                <ion-item *ngFor="let p of products" lines="none" class="animated fadeIn fast list content-bg-becrux">
+                    <ion-thumbnail slot="start">
+                        <ion-img class="badge-img" src="assets/template-themes/becrux/badge_new.png"></ion-img>
+                        <img src="{{p.img}}">
+                    </ion-thumbnail>
+                    <ion-label>
+                        <p>{{p.name}}</p>
+                        <p class="name-para"><del>{{p.dPrice}}$</del></p>
+                        <p class="name-para"> {{p.price}}$</p>
+                    </ion-label>
+                    <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="!p.fav" name="heart-empty"></ion-icon>
+                    <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="p.fav" name="heart"></ion-icon>
+                    <div class="sale">SALE</div>
+                    <div class="featured">FEATURED</div>
+                </ion-item>
+            </ion-list>
+            <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn fast">
+                <h6 text-center>{{'No Products Found!'|translate}}</h6>
+            </ion-col>
+        </div>
+
+        <div *ngSwitchCase="'winter'">
+            <ion-grid no-padding *ngIf="productView=='grid'" class="animated fadeIn fast">
+                <ion-row no-padding>
+                    <ion-col *ngFor="let p of products" size="6" no-padding>
+                        <app-product [data]="p" [type]="'normal'"></app-product>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <ion-list class="list-view" *ngIf="productView=='list'">
+
+                <ion-item *ngFor="let p of products" lines="none" class="animated fadeIn list content-bg-becrux">
+                    <ion-thumbnail slot="start">
+                        <ion-img class="badge-img" src="assets/template-themes/becrux/badge_new.png"></ion-img>
+                        <img src="{{p.img}}">
+                    </ion-thumbnail>
+                    <ion-label>
+                        <p>{{p.name}}</p>
+                        <p class="name-para"><del>{{p.dPrice}}$</del></p>
+                        <p class="name-para"> {{p.price}}$</p>
+                    </ion-label>
+                    <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="!p.fav" name="heart-empty"></ion-icon>
+                    <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="p.fav" name="heart"></ion-icon>
+                    <div class="sale">SALE</div>
+                    <div class="featured">FEATURED</div>
+                </ion-item>
+            </ion-list>
+            <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn">
+                <h6 text-center>{{'No Products Found!'|translate}}</h6>
+            </ion-col>
+        </div>
+
+        <div *ngSwitchCase="'shoes'">
+            <ion-grid no-padding *ngIf="productView=='grid'" class="animated fadeIn fast">
+                <ion-row no-padding>
+                    <ion-col *ngFor="let p of products" size="6" no-padding>
+                        <app-product [data]="p" [type]="'normal'"></app-product>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <ion-list class="list-view" *ngIf="productView=='list'">
+
+                <ion-item *ngFor="let p of products"lines="none" class="animated fadeIn list content-bg-becrux">
+                    <ion-thumbnail slot="start">
+                        <ion-img class="badge-img" src="assets/template-themes/becrux/badge_new.png"></ion-img>
+                        <img src="{{p.img}}">
+                    </ion-thumbnail>
+                    <ion-label>
+                        <p>{{p.name}}</p>
+                        <p class="name-para"><del>{{p.dPrice}}$</del></p>
+                        <p class="name-para"> {{p.price}}$</p>
+                    </ion-label>
+                    <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="!p.fav" name="heart-empty"></ion-icon>
+                    <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="p.fav" name="heart"></ion-icon>
+                    <div class="sale">SALE</div>
+                    <div class="featured">FEATURED</div>
+                </ion-item>
+            </ion-list>
+            <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn">
+                <h6 text-center>{{'No Products Found!'|translate}}</h6>
+            </ion-col>
+        </div>
+        <div *ngSwitchCase="'watches'">
+            <ion-grid no-padding *ngIf="productView=='grid'" class="animated fadeIn fast">
+                <ion-row no-padding>
+                    <ion-col *ngFor="let p of products" size="6" no-padding>
+                        <app-product [data]="p" [type]="'normal'"></app-product>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <ion-list class="list-view" *ngIf="productView=='list'">
+                <ion-item *ngFor="let p of products" lines="none" class="animated fadeIn content-bg-becrux list">
+                    <ion-thumbnail slot="start">
+                        <ion-img class="badge-img" src="assets/template-themes/becrux/badge_new.png"></ion-img>
+                        <img src="{{p.img}}">
+                    </ion-thumbnail>
+                    <ion-label>
+                        <p>{{p.name}}</p>
+                        <p class="name-para"><del>{{p.dPrice}}$</del></p>
+                        <p class="name-para"> {{p.price}}$</p>
+                    </ion-label>
+                    <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="!p.fav" name="heart-empty"></ion-icon>
+                    <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="p.fav" name="heart"></ion-icon>
+                    <div class="sale">SALE</div>
+                    <div class="featured">FEATURED</div>
+                </ion-item>
+            </ion-list>
+            <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn">
+                <h6 text-center>{{'No Products Found!'|translate}}</h6>
+            </ion-col>
+        </div>
+
+    </div>
+    <!-- infinite scroll -->
+    <ion-infinite-scroll #infinite (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
+
+<ion-footer class="products-footer">
+    <ion-toolbar color="light">
+        <ion-buttons left>
+            <small>{{"Sort Products"|translate}}
+            </small>
+        </ion-buttons>
+        <ion-button size="medium" fill="clear" class="as-btn" (click)="resetFilters()">
+            {{sortOrder| translate}}
+            <ion-icon name="arrow-up"></ion-icon>
+        </ion-button>
+        <ion-buttons slot="end">
+            <ion-button (click)="changeLayout()">
+                <ion-icon name="ios-list" [name]="productView=='grid'? 'list' : 'apps'"></ion-icon>
+            </ion-button>
+            <ion-button (click)="refresh()">
+                <ion-icon name="refresh"></ion-icon>
+            </ion-button>
+            <ion-menu-button (click)="openRightMenu()">
+                <ion-icon name="funnel"></ion-icon>
+            </ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>
+
+<!--  For Shop Filter Side Menu  -->
+<ion-menu menuId="bbShop" contentId="productContent" side="end">
+    <ion-header>
+        <ion-menu-toggle auto-hide="false" no-padding>
+            <ion-toolbar class="menu-toolbar">
+                <ion-buttons slot="start">
+                    <ion-button fill="clear">
+                        <ion-icon slot="icon-only" class="usd-icon" name="close"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
+                <ion-title>Filter</ion-title>
+            </ion-toolbar>
+        </ion-menu-toggle>
+    </ion-header>
+    <ion-content class="content-bg-becrux">
+        <h2 class="price-heading">By Price</h2>
+        <ion-item class="content-bg-becrux">
+            <ion-range id="dual-range" min="0" max="200" [(ngModel)]="structure" dual-knobs pin>
+            </ion-range>
+        </ion-item>
+        <h2 class="price-heading">By Sale/Featured</h2>
+        <ion-item class="content-bg-becrux">
+            <ion-checkbox slot="start"></ion-checkbox>
+            <p>Sale</p>
+        </ion-item>
+        <ion-item lines="none" class="content-bg-becrux">
+            <ion-checkbox slot="start"></ion-checkbox>
+            <p>Featured</p>
+        </ion-item>
+        <h2 class="price-heading">By Color</h2>
+        <ion-item class="content-bg-becrux">
+            <ion-checkbox slot="start"></ion-checkbox>
+            <p>Red</p>
+        </ion-item>
+        <ion-item lines="none" class="content-bg-becrux">
+            <ion-checkbox slot="start"></ion-checkbox>
+            <p>Black</p>
+        </ion-item>
+        <h2 class="price-heading">By Size</h2>
+        <ion-item class="content-bg-becrux">
+            <ion-checkbox slot="start"></ion-checkbox>
+            <p>Small</p>
+        </ion-item>
+        <ion-item class="content-bg-becrux">
+            <ion-checkbox slot="start"></ion-checkbox>
+            <p>Medium</p>
+        </ion-item>
+        <ion-item class="content-bg-becrux">
+            <ion-checkbox slot="start"></ion-checkbox>
+            <p>Large</p>
+        </ion-item>
+        <ion-item lines="none" class="content-bg-becrux">
+            <ion-checkbox slot="start"></ion-checkbox>
+            <p>Extra large</p>
+        </ion-item>
+    </ion-content>
+</ion-menu>

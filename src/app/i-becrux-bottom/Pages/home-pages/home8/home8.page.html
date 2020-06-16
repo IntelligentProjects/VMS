@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goToSearchPage()">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="goToCartPage()">
+        <ion-icon class="cart-badge" name="cart"></ion-icon>
+        <ion-badge>0</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <app-banner-two></app-banner-two>
+  <!-- For Categories Sliders -->
+  <app-categories [type]="'name&count'"></app-categories>
+
+  <!-- Newest Products Heading-->
+  <ion-item lines="none" class="content-bg-becrux">
+    <ion-icon slot="start" src="assets/custom-icon-tc-shop/tabs.svg"></ion-icon>
+    <ion-label>
+      <p>{{'Newest' | translate }}</p>
+    </ion-label>
+    <ion-button slot="end" routerLink="/bb-products" routerDirection="forward" fill="clear" >Shop More
+      <ion-icon name="play" class="icon-shop-more"></ion-icon>
+    </ion-button>
+  </ion-item>
+
+  <!-- Newest Products swipe slider -->
+  <ion-slides class="animated bounceInRight delay-900ms" [options]="sliderConfig" dir="{{shared.dir}}">
+    <ion-slide *ngFor="let p of newestItems">
+      <app-product [data]="p" [type]="'normal'"></app-product>
+    </ion-slide>
+    <ion-slide>
+      <ion-button routerLink="/bb-products" routerDirection="forward" fill="clear" > {{'Shop More'| translate}}
+        <ion-icon name="play" class="icon-shop-more"></ion-icon>
+      </ion-button>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- On Sale Products Heading -->
+  <ion-item lines="none" class="content-bg-becrux">
+    <ion-icon slot="start" src="assets/custom-icon-tc-shop/dollar-ribbon.svg"></ion-icon>
+    <ion-label>
+      <p>{{'On Sale' | translate }}</p>
+    </ion-label>
+    <ion-button routerLink="/bb-products" routerDirection="forward" slot="end" fill="clear" >Shop More
+      <ion-icon name="play" class="icon-shop-more"></ion-icon>
+    </ion-button>
+  </ion-item>
+
+  <!-- On Sale Products swipe slider -->
+  <ion-slides class="animated bounceInRight delay-900ms" [options]="sliderConfig" dir="{{shared.dir}}">
+    <ion-slide *ngFor="let p of onSaleItems">
+      <app-product [data]="p" [type]="'normal'"></app-product>
+    </ion-slide>
+    <ion-slide>
+      <ion-button routerLink="/bb-products" routerDirection="forward" fill="clear" > {{'Shop More'| translate}}
+        <ion-icon name="play" class="icon-shop-more"></ion-icon>
+      </ion-button>
+    </ion-slide>
+  </ion-slides>
+  <!-- For Vendor List -->
+  <app-vendor-list></app-vendor-list>
+  <!-- Featured Products Heading -->
+  <ion-item lines="none" class="content-bg-becrux">
+    <ion-icon slot="start" src="assets/custom-icon-tc-shop/favorites.svg"></ion-icon>
+    <ion-label>
+      <p>{{'Featured' | translate }}</p>
+    </ion-label>
+    <ion-button slot="end" routerLink="/bb-products" routerDirection="forward" fill="clear" >Shop More
+      <ion-icon name="play" class="icon-shop-more"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <!-- Featured Products -->
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let p of featuredItems" size="6">
+        <app-product [data]="p" [type]="'normal'"></app-product>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-icon class="theme-icon"  name="help-buoy"></ion-icon>
+        <p>{{'Contact Us'|translate}}</p>
+        <p><small>+1 123 456-789</small></p>
+      </ion-col>
+      <ion-col size="6">
+        <ion-icon class="theme-icon"  name="card"></ion-icon>
+        <p>{{'Safe Payment'|translate}}</p>
+        <p><small>Secure Online Payment</small></p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

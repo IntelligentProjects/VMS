@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" routerLink="/bb-categories3" routerDirection="backward">
+        <ion-icon slot="icon-only"src='assets/custom-icon-tc-shop/back.svg'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      {{'Sub Category'|translate}}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goToSearchPage()">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="goToCartPage()">
+        <ion-icon class="cart-badge" name="cart"></ion-icon>
+        <ion-badge>1</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <ion-item *ngFor="let product of items" routerLink="/bb-sub-categories3" routerDirection="forward">
+    <ion-avatar slot="start" class="animated flipInX delay-900ms">
+      <img src="{{product.img}}" />
+    </ion-avatar>
+    <ion-label padding>
+      <ion-text>
+        <h2>{{product.name|translate}}</h2>
+        <p>{{product.count}} {{'Products'| translate }}</p>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+  <ion-button routerLink="/bb-products" routerDirection="forward" fill="clear" color="dark"> View all
+    <ion-icon name="arrow-dropright"></ion-icon>
+  </ion-button>
+</ion-content>

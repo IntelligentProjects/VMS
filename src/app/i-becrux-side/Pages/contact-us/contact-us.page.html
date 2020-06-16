@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start">
+      <ion-icon name="menu"></ion-icon>
+    </ion-menu-button>
+    <ion-title class="ecom-title">
+      Contact Us
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goToSearchPage()">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="goToCartPage()">
+        <ion-icon class="cart-badge" name="cart"></ion-icon>
+        <ion-badge color="secondary">0</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <ion-card no-padding>
+    <ion-card-content no-padding>
+      <ion-item lines="none" class="content-bg-becrux">
+        <ion-avatar slot="start">
+          <ion-icon class="theme-icon"  name="pin"></ion-icon>
+        </ion-avatar>
+        <ion-label>
+          <p wrap-text>
+            228 Park Avs, New York, NY
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none" class="content-bg-becrux">
+        <ion-avatar slot="start">
+          <ion-icon class="theme-icon"  name="mail"></ion-icon>
+        </ion-avatar>
+        <ion-label>
+          <p>
+            test@themes-coder.com
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none" class="content-bg-becrux">
+        <ion-avatar slot="start">
+          <ion-icon class="theme-icon"  name="call"></ion-icon>
+        </ion-avatar>
+
+        <ion-label>
+          <p>
+            +1 123 456-789
+          </p>
+        </ion-label>
+      </ion-item>
+
+      <form>
+        <ion-item class="content-bg-becrux">
+          <ion-input type="text" placeholder="{{'Name'|translate}}" name="name" [(ngModel)]="contact.name" required></ion-input>
+        </ion-item>
+        <ion-item class="content-bg-becrux">
+          <ion-input type="email" placeholder="{{'Email'|translate}}" name="email" [(ngModel)]="contact.email" required></ion-input>
+        </ion-item>
+        <ion-item class="content-bg-becrux">
+          <ion-input type="text" placeholder="{{'Your Messsage'|translate}}" name="message" [(ngModel)]="contact.message"
+            required></ion-input>
+        </ion-item>
+        <ion-item lines="none" class="content-bg-becrux">
+          <ion-button expand="full" type="submit">{{'Contact Us'|translate}}</ion-button>
+        </ion-item>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

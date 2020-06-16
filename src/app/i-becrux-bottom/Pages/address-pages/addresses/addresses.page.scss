@@ -1,0 +1,44 @@
+ion-header{
+    ion-toolbar{
+        // --background:black;
+        --color:white;
+        ion-icon{
+            font-size: 22px;
+        }
+        ion-title{
+            ion-img{
+                height: 25px;
+            }
+        }
+        ion-buttons{
+            ion-icon{
+                font-size: 22px;
+            }
+            ion-badge{
+                position: absolute;
+                right: 3px;
+                bottom: 14px;
+            }
+        }
+    }
+}
+ion-content{
+    p{
+        font-size: 20px;
+        text-align: center;
+        margin-top: 16px !important;
+        margin-bottom: 10px !important;       
+    }
+    form{
+        ion-item{
+            ion-label{
+                color: gray;
+            }
+        }
+    }
+    ion-button{
+        // --background: black;
+        --color: white;
+        margin: 0;
+    }
+}

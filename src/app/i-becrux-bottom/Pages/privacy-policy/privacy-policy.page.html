@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ecom-title">{{'Privacy Policy'|translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <ion-text>
+    <p [innerHTML]="config.privacyPolicy">
+    </p>
+  </ion-text>
+</ion-content>
+<!-- <ion-footer>
+    <ion-fab vertical="bottom" horizontal="end">
+      <ion-fab-button size="small" routerLink="/bb-advance-options" routerDirection="forward">
+        <ion-icon src="assets/custom-icon-tc-shop/gear.svg"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-footer> -->

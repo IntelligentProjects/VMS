@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ecom-title">{{'Select Country'|translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <ion-searchbar placeholder="{{'Search'|translate}}" #Searchbar></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of items" (click)="selectCountry(item)" class="content-bg-becrux">
+      {{ item.name }}
+    </ion-item>
+  </ion-list>
+</ion-content>
+<!-- <ion-footer>
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button size="small" routerLink="/bb-advance-options" routerDirection="forward">
+      <ion-icon src="assets/custom-icon-tc-shop/gear.svg"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-footer> -->

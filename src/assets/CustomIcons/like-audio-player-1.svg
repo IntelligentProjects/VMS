@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="49" viewBox="0 0 50 49">
+  <g id="like" transform="translate(6.404 5.778)">
+    <g id="Oval_4" data-name="Oval 4" transform="translate(-0.404 0.222)" fill="#fd4a6c" stroke="#191b1e" stroke-miterlimit="10" stroke-width="6">
+      <ellipse cx="19" cy="18.5" rx="19" ry="18.5" stroke="none"/>
+      <ellipse cx="19" cy="18.5" rx="22" ry="21.5" fill="none"/>
+    </g>
+    <path id="Combined_Shape" data-name="Combined Shape" d="M0,5.2c0-.057,0-.113,0-.168S0,4.944,0,4.9A4.693,4.693,0,0,1,4.455,0,4.324,4.324,0,0,1,8,1.933,4.324,4.324,0,0,1,11.545,0,4.693,4.693,0,0,1,16,4.9q0,.063,0,.126c0,.056,0,.114,0,.173C16,10.06,9.8,14,8,14S0,10.06,0,5.2Z" transform="translate(10.596 13.222)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>

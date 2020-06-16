@@ -1,5 +1,7 @@
 {
   "name": "Vms-App",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,0 +1,72 @@
+[
+    {
+      "title": "Battery",
+      "expanded": true,
+      "cat_products": [
+        { "id": 0, 
+          "title": "Odyssey PC680 Battery",
+          "product_image": "https://article.images.consumerreports.org/f_auto/prod/content/dam/cro/news_articles/cars/CR-BG-Car-Batteries-Battery-SBS-Die-Hard-3", 
+          "price": 80,
+          "amount": 1 
+        },
+        { "id": 1, 
+          "title": "XS Power D6500 - Editor's Choice", 
+          "product_image": "https://images-na.ssl-images-amazon.com/images/I/51HNjx7GP2L._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_PIStarRatingFIVE%2CBottomLeft%2C360%2C-6_SR600%2C315_ZA(34%20Reviews)%2C445%2C291%2C400%2C400%2Carial%2C12%2C4%2C0%2C0%2C5_SCLZZZZZZZ_.jpg",
+          "rate": 50,
+          "amount": 1 
+        },
+        { "id": 2, 
+          "title": "Optima Batteries 8004-003 - Editor's Choice",
+          "product_image": "https://images-na.ssl-images-amazon.com/images/I/6155n7PKoPL._SL500_.jpg", 
+          "rate": 90,
+          "amount": 1 
+        },
+        { "id": 3, 
+          "title": "VMAX857 AGM Battery - Best Valued Battery",
+          "product_image": "https://images-na.ssl-images-amazon.com/images/I/7133gsCh%2B1L._AC_SX425_.jpg", 
+          "rate": 70,
+          "amount": 1 
+        }
+      ]
+    },
+    {
+      "title": "Tyres",
+      "cat_products": [
+        { "id": 4, 
+          "title": "Bridgestone",
+          "product_image": "https://sc01.alicdn.com/kf/HTB1vDfgocjI8KJjSsppq6xbyVXag/215-40ZR18-best-China-tyre-brand-list.jpg", 
+          "rate": 80,
+          "amount": 1 
+        },
+        { "id": 5, 
+          "title": "Michelin",
+          "product_image": "https://tyrewallstickers.com/wp-content/uploads/2019/08/Michelin-2.jpg", 
+          "rate": 60,
+          "amount": 1 
+        }
+      ]
+    },
+    {
+      "title": "Breaks",
+      "cat_products": [
+        { "id": 6, 
+          "title": "HamBreaks",
+          "product_image": "https://4.imimg.com/data4/GE/MP/GLADMIN-182438/car-brake-shoe-500x500.jpg", 
+          "rate": 80,
+          "amount": 1 
+        },
+        { "id": 7, 
+          "title": "BasicBreaks",
+          "product_image": "https://4.imimg.com/data4/GE/MP/GLADMIN-182438/car-brake-shoe-500x500.jpg", 
+          "rate": 50,
+          "amount": 1 
+        },
+        { "id": 8, 
+          "title": "Breaksxyz",
+          "product_image": "https://images-na.ssl-images-amazon.com/images/I/818LMY1sMOL._AC_SX355_.jpg", 
+          "rate": 90,
+          "amount": 1 
+        }
+      ]
+    }
+  ]

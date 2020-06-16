@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <ion-list class="list-avatar">
+    <img class="bing-img" src="{{banner}}">
+    <ion-item no-padding text-center>
+      <ion-label>
+        <ion-avatar>
+          <img src="{{gravatar}}">
+        </ion-avatar>
+        <h2>{{name}}</h2>
+        <p class="icon">
+          <ion-icon name="star-outline"></ion-icon>&nbsp;&nbsp;{{rating}}
+        </p>
+        <p>{{email}}</p>
+        <ion-button color="light">
+          {{'Contact Us' | translate }}
+        </ion-button>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-grid no-padding>
+    <ion-row no-padding>
+      <ion-col *ngFor="let p of products" size="6" no-padding>
+        <app-product [data]="p" [type]="'normal'"></app-product>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-infinite-scroll #infinite>
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,102 @@
+ion-header{
+    ion-toolbar{
+        // --background:black;
+        --color:white;
+        ion-icon{
+            font-size: 22px;
+        }
+        ion-title{
+            text-align: center;
+            margin-left: 46px;
+        }
+        ion-buttons{
+            ion-icon{
+                font-size: 22px;
+            }
+            ion-badge{
+                position: absolute;
+                right: 3px;
+                bottom: 14px;
+            }
+        }
+    }
+}
+ion-content{
+    ion-button{
+        text-transform: capitalize;
+        margin-right: 0;
+    }
+    .swiper-slide {
+        width: 40%;
+      }
+    // if data load
+    ion-segment{
+        background: #f9f9f9;
+        ion-segment-button{
+            --indicator-color:lightgray;
+            // --indicator-color-checked: black;
+            // --color-checked: black;
+            font-size: 14px;
+            --color: #707070;
+        }
+    }
+    ion-slides{
+        ion-slide{
+            &:last-child{
+                height: auto;
+            }
+        }
+    }
+    app-product{
+        width: 100%;
+    }
+    ion-row{
+        padding-left:4px;
+        padding-top: 6px !important;
+        ion-col{
+            h5{
+                margin-top: 0;
+                margin-bottom: -3px;
+                font-size: 13.5px;
+            }
+        }
+    }
+    ion-item{
+        --inner-padding-end: 0;
+        --padding-start: 4px;
+        padding-top: 3px;
+        margin-bottom: -15px;
+        ion-icon{
+            margin-right: 5px;
+            // color: black;
+            font-size: 15px;
+            margin-left: 6px;
+        }
+        ion-label{
+            p{
+                margin-top: 0;
+                margin-bottom: -2px;
+                font-size: 16px !important;
+                font-family: "roboto-medium" !important;
+                color: black;
+                margin-left: 5px;
+            }
+        }
+        ion-button{
+            // color: black;
+        }
+    }
+    .row-segment{
+        margin-right: 10px;
+    }
+}
+.icon-shop-more{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+.shop-btn{
+    width: 100%;
+}
+.label-cat{
+    padding-bottom: 2px !important;
+}

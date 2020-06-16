@@ -1,0 +1,5 @@
+<svg id="previous-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Rectangle_7_Copy" data-name="Rectangle 7 Copy" width="24" height="24" fill="none"/>
+  <path id="Triangle_Copy_2" data-name="Triangle Copy 2" d="M4.744,2.718l1.089.775L9.465,6.08h0a1.059,1.059,0,0,1,0,1.841L1.292,13.74C.579,14.249,0,13.988,0,13.157V.843C0,.013.578-.249,1.292.26l.671.478" transform="translate(18 19) rotate(180)" fill="none" stroke="#4b4f5a" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+  <path id="Line_Copy" data-name="Line Copy" d="M1,0V14" transform="translate(6 5)" fill="none" stroke="#4b4f5a" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+</svg>

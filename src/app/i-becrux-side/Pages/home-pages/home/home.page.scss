@@ -1,0 +1,78 @@
+ion-header{
+    ion-toolbar{
+        --color:white;
+        ion-icon{
+            font-size: 22px;
+        }
+        ion-title{
+            text-align: center;
+            margin-left: 46px;
+        }
+        ion-buttons{
+            ion-icon{
+                font-size: 22px;
+            }
+            ion-badge{
+                position: absolute;
+                right: 5px;
+                bottom: 14px;
+            }
+        }
+    }
+}
+ion-content{
+    .swiper-slide {
+        width: 40%;
+      }
+    // if data load
+    ion-segment{
+        background: #f9f9f9;
+        ion-segment-button{
+            // --indicator-color:lightgray;
+            // --indicator-color-checked: black;
+            // --color-checked: black;
+            font-size: 14px;
+            // --color: #707070;
+        }
+    }
+    ion-slides{
+        ion-slide{
+            &:last-child{
+                height: auto;
+            }
+        }
+    }
+    app-product{
+        width: 100%;
+    }
+    ion-row{
+        padding-left:4px;
+        padding-top: 6px !important;
+        ion-col{
+            h5{
+                font-size: 16px !important;
+                font-family: "roboto-medium" !important;
+                color: black;
+                margin-top: 0;
+                margin-bottom: -2px;
+                margin-left: 10px;
+            }
+            ion-icon{
+                font-size: 17px;
+                // color: black;
+                margin-bottom: -6px;
+            }
+        }
+    }
+
+    ion-fab{
+        position: fixed;
+        ion-fab-button{
+            --color: white;
+            ion-icon{
+                font-size: 20px;
+                color: white;
+            }
+        }
+    }
+}

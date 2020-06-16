@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goToBillingAddress()">
+          <ion-icon slot="icon-only" src="assets/custom-icon-tc-shop/back.svg"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-title class="ecom-title">{{'Shipping Method'|translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+
+  <ion-list class="ion-padding">
+    <ion-radio-group>
+      <ion-item lines="full" *ngFor="let m of shippingMethod" class="content-bg-becrux">
+        <ion-label>{{m.title}}
+        </ion-label>
+        <ion-radio [value]=[m] (ionSelect)="setMethod(m)"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+</ion-content>
+<ion-footer>
+        <ion-fab vertical="bottom" horizontal="end">
+          <ion-fab-button size="small" routerLink="/bb-advance-options" routerDirection="forward">
+            <ion-icon src="assets/custom-icon-tc-shop/gear.svg"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+  <ion-button disabled="false" expand="block" (click)="proceedOrder()">Next</ion-button>
+</ion-footer>

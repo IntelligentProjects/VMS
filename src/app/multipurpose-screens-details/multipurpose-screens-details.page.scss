@@ -1,0 +1,23 @@
+.content {
+  ion-list {
+    padding-top: 0;
+    ion-item {
+      ion-grid {
+        ion-row {
+          .allColPos {
+            padding-left: 16px;
+          }
+          .listHelpItem{
+             --background:  var(--ion-border-color);
+          }
+          .listitem{
+            --background: var(--ion-border-color);
+          }
+          .mainComponent{
+            --background: var(--ion-border-color);
+          }
+        }
+      }
+    }
+  }
+}

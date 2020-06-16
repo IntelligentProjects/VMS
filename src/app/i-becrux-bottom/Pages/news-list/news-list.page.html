@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" routerLink="/bb-home" routerDirection="forward">
+        <ion-icon class="back-icon" slot="icon-only" src='assets/custom-icon-tc-shop/back.svg'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title no-padding class="ecom-title">
+      {{'News List'| translate }}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goToSearchPage()">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="goToCartPage()">
+        <ion-icon class="cart-badge" name="cart"></ion-icon>
+        <ion-badge color="secondary">0</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content">
+  <ion-list>
+    <ion-item lines="full" *ngFor="let post of posts" (click)="showPostDetail(post)" class="animated fadeIn content-bg-becrux">
+      <ion-thumbnail slot="start">
+        <ion-img src="{{post.image}}"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{post.title}}
+          <br>
+          <small>
+            <ion-icon name="clock"></ion-icon>
+            <ion-label>
+              {{post.date}}
+            </ion-label>
+          </small>
+        </h2>
+        <p>{{post.content}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button size="small" routerLink="/bb-advance-options" routerDirection="forward">
+      <ion-icon src="assets/custom-icon-tc-shop/gear.svg"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-footer>

@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Vms Mangement System</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="gotoCart()">
+        <ion-badge >{{ cart.length }}</ion-badge>
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <p>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="searchChanged($event)"></ion-searchbar>
+  </p>
+  <ion-list>
+    <ion-card *ngFor="let p of dataSource">
+      <ion-card-header>
+        <ion-card-title>{{ p.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="3">
+            <ion-label color="secondary">
+              <img [src]="p.product_image" style="height: 60px; width: 60px;" />
+            </ion-label>
+          </ion-col>
+          <ion-col size="5">
+            <ion-label color="secondary">
+              <b>{{ p.rate | currency:'USD' }}</b>
+            </ion-label>
+          </ion-col>
+          <ion-col size="4" class="ion-text-right">
+            <ion-button fill="clear" (click)="addToCart(p)">
+              <ion-icon name="add"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
+

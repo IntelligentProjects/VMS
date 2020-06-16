@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start">
+      <ion-icon name="menu"></ion-icon>
+    </ion-menu-button>
+    <ion-title class="ecom-title"> 
+      {{'Edit Profile'| translate }}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goToSearchPage()">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="goToCartPage()">
+        <ion-icon class="cart-badge" name="cart"></ion-icon>
+        <ion-badge color="secondary">0</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <form>
+    <ion-item class="content-bg-becrux">
+        <ion-label position="floating">{{'First Name'|translate}}</ion-label>
+      <ion-input type="text" [(ngModel)]="myAccountData.first_name" name="customers_firstname"
+        required></ion-input>
+    </ion-item>
+    <ion-item class="content-bg-becrux">
+        <ion-label position="floating">{{'Last Name'|translate}}</ion-label>
+      <ion-input type="text"[(ngModel)]="myAccountData.last_name" name="customers_lastname"
+        required></ion-input>
+    </ion-item>
+    <ion-item class="content-bg-becrux">
+        <ion-label position="floating">{{'New Password'|translate}}</ion-label>
+      <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+    </ion-item>
+  </form>
+</ion-content>
+<ion-footer>
+  <ion-button (click)="isUpdated()" expand="full" type="submit">{{ 'UPDATE' | translate }}
+  </ion-button>
+</ion-footer>

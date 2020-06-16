@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start">
+      <ion-icon name="menu"></ion-icon>
+    </ion-menu-button>
+    <ion-title class="ecom-title"> {{'Download'| translate }} </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="refreshPage()">
+        <ion-icon name="refresh"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear">
+        <ion-icon class="cart-badge" name="cart"></ion-icon>
+        <ion-badge>{{shared.cartquantity}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <ion-grid no-padding>
+    <ion-row no-padding>
+      <ion-col size="12" no-padding>
+        <ion-icon name="download"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row no-padding>
+      <ion-col size="12" no-padding>
+        <h4>{{'Your Download List is Empty'|translate}}</h4>
+      </ion-col>
+    </ion-row>
+
+    <ion-row no-padding>
+      <ion-col size="12" no-padding>
+        <p>{{'continue shopping'|translate}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row no-padding>
+      <ion-col size="12" no-padding>
+        <ion-button>{{'Explore'|translate}}</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-infinite-scroll #infinite>
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

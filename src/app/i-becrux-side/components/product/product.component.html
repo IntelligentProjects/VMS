@@ -1,0 +1,62 @@
+<!-- skeleton text until data not loaded -->
+<div *ngIf="p==1">
+  <ion-card class="skeleton-card">
+    <ion-skeleton-text animated>
+    </ion-skeleton-text>
+    <p>
+      <ion-skeleton-text animated>
+      </ion-skeleton-text>
+    </p>
+    <p>
+      <ion-skeleton-text animated class="skeleton-para">
+      </ion-skeleton-text>
+    </p>
+  </ion-card>
+</div>
+
+<div *ngIf="p!=1">
+  <ion-card *ngIf="p.res">
+    <div class="sale-featured">
+      <div *ngIf="p.sale==true" class="sale">SALE</div>
+      <div *ngIf="p.featured==true" class="featured">FEATURED</div>
+    </div>
+    <img src="assets/template-themes/becrux/new-badge.svg" />
+    <img src="{{p.img}}" (click)="goToProductDetail()" />
+    <p>{{p.name}}</p>
+    <ion-grid no-padding>
+      <ion-row no-padding>
+        <ion-col size="10" no-padding>
+          <p><del>{{p.dPrice}}$</del> <span>{{p.price}}$</span></p>
+        </ion-col>
+        <!-- <ion-col size="5" no-padding>
+          <p></p>
+        </ion-col> -->
+        <ion-col size="2" no-padding>
+          <ion-icon class="icon" (click)="onIconClick(p)" *ngIf="!p.fav" name="heart-outline"></ion-icon>
+          <ion-icon class="icon" (click)="onIconClick(p)" *ngIf="p.fav" name="heart"></ion-icon>
+        </ion-col>
+        <div *ngIf="type=='recent'" class="div-recent-btn">
+          <ion-button color="danger">Remove</ion-button>
+        </div>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <!-- //====================================  list view for shop page ==================================== -->
+  <ion-item lines="none" *ngIf="type=='list'" class="animated fadeIn">
+    <ion-thumbnail slot="start">
+      <ion-img class="badge-img" src="assets/template-themes/becrux/badge_new.png"></ion-img>
+      <img class="img-list" src="assets/template-themes/becrux/images/item-images/1.png" />
+    </ion-thumbnail>
+    <ion-label>
+      <p>{{p.name}}</p>
+      <p><del>26.00 $</del>-<b>22.00$</b></p>
+    </ion-label>
+    <ion-icon class="icon" (click)="onIconClick(p)" *ngIf="!p.fav" name="heart-outline"></ion-icon>
+    <ion-icon class="icon" (click)="onIconClick(p)" *ngIf="p.fav" name="heart"></ion-icon>
+    <div class="sale-featured">
+      <div [ngStyle]="{'background':itemColor}" *ngIf="p.sale==true" class="sale">SALE</div>
+      <div [ngStyle]="{'background':itemColor}" *ngIf="p.featured==true" class="featured">FEATURED</div>
+    </div>
+  </ion-item>
+</div>

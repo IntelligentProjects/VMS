@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/home" routerDirection="backward">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Multipurpose Screens
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding content">
+  <!-- For Screens Content -->
+  <ion-list>
+    <ion-item lines="full" (click)="expandItems(item)" class="listItem ion-no-padding" *ngFor="let item of screens">
+      <ion-grid class="listGrid ion-no-padding">
+        <ion-row>
+          <ion-col size="10" class="allColPos">
+            <p class="parainnerScreen">
+              {{item.category}}
+            </p>
+          </ion-col>
+          <ion-col size="2" class="ion-align-self-center">
+            <div class="div-badge">
+              <ion-badge class="buttonList">{{item.Number}}</ion-badge>
+            </div>
+          </ion-col>
+        </ion-row>
+        <app-menu-component expandHeight="750px" [expanded]="item.expand" class="ion-no-padding">
+          <ion-item routerDirection="'forward'" [routerLink]="list.url" lines="full" class="listHelpItem" *ngFor="let list of item.subCat;let i = index">
+            <p class="parainnerList">{{list.name}}</p>
+          </ion-item>
+        </app-menu-component>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>

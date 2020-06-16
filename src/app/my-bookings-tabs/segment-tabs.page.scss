@@ -1,0 +1,27 @@
+ion-content{
+    --padding-bottom: 5px;
+    --padding-end: 5px;
+    --padding-start: 5px;
+    --padding-top: 5px;
+    ion-card{
+        margin: 5px;
+        padding: 10px;
+        background: transparent;
+        ion-card-content{
+            padding:0;   
+            
+            ion-col{
+                &:first-child{
+                    text-align: left;
+                }
+                &:last-child{
+                    text-align: right;
+                }
+           }
+           ion-button{
+               margin-left: 0;
+               margin-right: 0;
+           }
+        }
+    }
+}

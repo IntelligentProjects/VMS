@@ -1,0 +1,32 @@
+ion-content{
+  .swiper-slide {
+      width: 40%;
+    }
+  app-product{
+      width: 100%;
+  }
+  ion-slides{
+      ion-slide{
+          &:last-child{
+              height: auto;
+          }
+      }
+  }
+  ion-row{
+      padding-left:4px;
+      padding-top: 6px !important;
+          ion-col{
+              h5{
+                  font-size: 16px !important;
+                  font-family: "roboto-medium" !important;
+                  margin-top: 0;
+                  margin-bottom: -2px;
+                  margin-left: 10px;
+              }
+              ion-icon{
+                  font-size: 17px;
+                  margin-bottom: -6px;
+              }
+          }
+  }
+}

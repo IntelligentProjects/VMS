@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goToSearchPage()">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="goToCartPage()">
+        <ion-icon class="cart-badge" name="cart"></ion-icon>
+        <ion-badge>0</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" [scrollEvents]="true" (ionScroll)="onScroll($event)" class="content content-bg-becrux">
+  <app-banner></app-banner>
+
+  <!-- for scrollable segment and all products -->
+  <app-sliding-tabs [type]="'image'"></app-sliding-tabs>
+
+  <!-- For FAB Icon -->
+  <ion-fab vertical="bottom" horizontal="end" *ngIf="scrollTopButton">
+    <ion-fab-button size="small"  (click)="scrollToTop()">
+      <ion-icon name="arrow-up-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

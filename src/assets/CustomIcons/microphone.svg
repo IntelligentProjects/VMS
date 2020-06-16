@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11.789" height="16" viewBox="0 0 11.789 16">
+  <g id="voice-message-microphone-button" transform="translate(-63.75)">
+    <g id="keyboard-voice" transform="translate(63.75)">
+      <path id="Path_11" data-name="Path 11" d="M69.645,10.105a2.481,2.481,0,0,0,2.526-2.526V2.526a2.526,2.526,0,1,0-5.053,0V7.579A2.481,2.481,0,0,0,69.645,10.105Zm4.463-2.526a4.466,4.466,0,0,1-8.926,0H63.75A5.862,5.862,0,0,0,68.8,13.221V16h1.684V13.221a5.862,5.862,0,0,0,5.053-5.642H74.108Z" transform="translate(-63.75)" fill="#7d7d7d"/>
+    </g>
+  </g>
+</svg>

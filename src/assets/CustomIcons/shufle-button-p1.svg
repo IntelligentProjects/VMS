@@ -1,0 +1,7 @@
+<svg id="shufle-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Rectangle_10" data-name="Rectangle 10" width="24" height="24" fill="none"/>
+  <path id="Rectangle_11" data-name="Rectangle 11" d="M1,12H0L8,6C8,9.309,4.859,12,1,12ZM5,1.075,0,0H1A7.785,7.785,0,0,1,5,1.073Z" transform="translate(3 6)" fill="none" stroke="#4b4f5a" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+  <path id="Rectangle_11_Copy" data-name="Rectangle 11 Copy" d="M1,12H0L8,6C8,9.309,4.859,12,1,12ZM5,1.075,0,0H1A7.785,7.785,0,0,1,5,1.073Z" transform="translate(19 18) rotate(180)" fill="none" stroke="#4b4f5a" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+  <path id="Line" d="M0,0,2,3,0,6" transform="translate(19 3)" fill="none" stroke="#4b4f5a" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+  <path id="Line_Copy_2" data-name="Line Copy 2" d="M0,0,2,3,0,6" transform="translate(19 15)" fill="none" stroke="#4b4f5a" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+</svg>

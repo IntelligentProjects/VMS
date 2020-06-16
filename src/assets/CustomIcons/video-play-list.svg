@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="206.278" height="125.034" viewBox="0 0 206.278 125.034">
+  <g id="Group_313" data-name="Group 313" transform="translate(-81.147 -238.852)">
+    <g id="album" transform="translate(149 280.486)">
+      <path id="Path_102" data-name="Path 102" d="M12,0H57.724V9.51H12Z" transform="translate(4.138)" fill="#dd352e"/>
+      <path id="Path_103" data-name="Path 103" d="M6,6H67.862v9.51H6Z" transform="translate(2.069 2.152)" fill="#b02721"/>
+      <path id="Path_104" data-name="Path 104" d="M0,12H78V66.344H0Z" transform="translate(0 4.303)" fill="#dd352e"/>
+      <path id="Path_105" data-name="Path 105" d="M23,44.807V24.37a1.378,1.378,0,0,1,2.079-1.178L42.5,33.41a1.363,1.363,0,0,1,0,2.356L25.079,45.983A1.377,1.377,0,0,1,23,44.807Z" transform="translate(7.931 8.248)" fill="#fff"/>
+    </g>
+    <g id="album-2" data-name="album" transform="translate(78.349 250.222) rotate(-30)" opacity="0.5">
+      <path id="Path_102-2" data-name="Path 102" d="M0,0,16.68-.074l-.015,3.452-16.68.074Z" transform="translate(5.887 -0.026)" fill="#dd352e"/>
+      <path id="Path_103-2" data-name="Path 103" d="M0,0,22.567-.1l-.015,3.452-22.567.1Z" transform="translate(2.931 2.946)" fill="#b02721"/>
+      <path id="Path_104-2" data-name="Path 104" d="M0,0,28.454-.126,28.368,19.6l-28.454.126Z" transform="translate(-0.026 5.917)" fill="#dd352e"/>
+      <path id="Path_105-2" data-name="Path 105" d="M-.035,7.915,0,.5A.507.507,0,0,1,.758.066L7.1,3.747a.494.494,0,0,1,0,.855L.722,8.339A.5.5,0,0,1-.035,7.915Z" transform="translate(11.234 11.291)" fill="#fff"/>
+    </g>
+    <g id="album-3" data-name="album" transform="translate(261.035 316.225) rotate(13)" opacity="0.7">
+      <path id="Path_102-3" data-name="Path 102" d="M0,0,16.646.037,16.654,3.5.008,3.459Z" transform="translate(5.875 0.013)" fill="#dd352e"/>
+      <path id="Path_103-3" data-name="Path 103" d="M0,0,22.521.051l.008,3.459L.008,3.459Z" transform="translate(2.944 2.971)" fill="#b02721"/>
+      <path id="Path_104-3" data-name="Path 104" d="M0,0,28.4.064l.044,19.764-28.4-.064Z" transform="translate(0.013 5.929)" fill="#dd352e"/>
+      <path id="Path_105-3" data-name="Path 105" d="M.018,7.931,0,.5A.5.5,0,0,1,.757.072L7.106,3.8a.5.5,0,0,1,0,.857L.775,8.36A.5.5,0,0,1,.018,7.931Z" transform="translate(11.286 11.389)" fill="#fff"/>
+    </g>
+    <g id="album-4" data-name="album" transform="translate(121.035 332.389) rotate(13)" opacity="0.8">
+      <path id="Path_102-4" data-name="Path 102" d="M0,0,16.646.037,16.654,3.5.008,3.459Z" transform="translate(5.875 0.013)" fill="#dd352e"/>
+      <path id="Path_103-4" data-name="Path 103" d="M0,0,22.521.051l.008,3.459L.008,3.459Z" transform="translate(2.944 2.971)" fill="#b02721"/>
+      <path id="Path_104-4" data-name="Path 104" d="M0,0,28.4.064l.044,19.764-28.4-.064Z" transform="translate(0.013 5.929)" fill="#dd352e"/>
+      <path id="Path_105-4" data-name="Path 105" d="M.018,7.931,0,.5A.5.5,0,0,1,.757.072L7.106,3.8a.5.5,0,0,1,0,.857L.775,8.36A.5.5,0,0,1,.018,7.931Z" transform="translate(11.286 11.389)" fill="#fff"/>
+    </g>
+    <g id="album-5" data-name="album" transform="translate(209.035 241.468) rotate(13)" opacity="0.3">
+      <path id="Path_102-5" data-name="Path 102" d="M0,0,16.646.037,16.654,3.5.008,3.459Z" transform="translate(5.875 0.013)" fill="#dd352e"/>
+      <path id="Path_103-5" data-name="Path 103" d="M0,0,22.521.051l.008,3.459L.008,3.459Z" transform="translate(2.944 2.971)" fill="#b02721"/>
+      <path id="Path_104-5" data-name="Path 104" d="M0,0,28.4.064l.044,19.764-28.4-.064Z" transform="translate(0.013 5.929)" fill="#dd352e"/>
+      <path id="Path_105-5" data-name="Path 105" d="M.018,7.931,0,.5A.5.5,0,0,1,.757.072L7.106,3.8a.5.5,0,0,1,0,.857L.775,8.36A.5.5,0,0,1,.018,7.931Z" transform="translate(11.286 11.389)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

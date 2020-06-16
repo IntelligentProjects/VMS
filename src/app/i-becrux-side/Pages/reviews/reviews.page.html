@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear">
+        <ion-icon slot="icon-only" routerLink="/bs-product-detail" routerDirection="forward"
+          src="assets/custom-icon-tc-shop/back.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ecom-title">{{'Reviews'|translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <ion-grid no-padding class="rating-gird">
+    <ion-row>
+      <ion-col>
+        <h4>{{'Ratings & Reviews'|translate}}</h4>
+      </ion-col>
+    </ion-row>
+
+    <ion-row align-items-center>
+      <ion-col size="5">
+        <h1>{{5| number:'1.2-2'}}
+          <ion-icon name="star"></ion-icon>
+        </h1>
+        <h3>5 {{'rating'|translate}}</h3>
+      </ion-col>
+      <ion-col size="7">
+        <ul>
+          <li>5
+            <ion-icon name="star"></ion-icon>
+            <span class="block animate" [style.width]="15+'%'" style="background-color:green;"></span>
+          </li>
+          <li>4
+            <ion-icon name="star"></ion-icon>
+            <span class="block animate" [style.width]="40+'%'" style="background-color:lightgreen;"></span>
+          </li>
+          <li>3
+            <ion-icon name="star"></ion-icon>
+            <span class="block animate" [style.width]="30+'%'" style="background-color:yellow;"></span>
+          </li>
+          <li>2
+            <ion-icon name="star"></ion-icon>
+            <span class="block animate" [style.width]="20+'%'" style="background-color:orange;"></span>
+          </li>
+          <li>1
+            <ion-icon name="star"></ion-icon>
+            <span class="block animate" [style.width]="10+'%'" style="background-color:darkorange;"></span>
+          </li>
+        </ul>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" color="danger">{{'Rate and write a review'|translate}}</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list>
+    <ion-item *ngFor="let r of reviews">
+      <ion-avatar slot="start">
+        <img src="assets/template-themes/becrux/avatar.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{r.name}}</h2>
+        <ul class="product-rating">
+          <li>
+            <div class="stars-outer">
+              <div class="stars-inner" [style.width]="(r.rating*20)+'%'"></div>
+            </div>
+            <h6>{{r.date_created}}</h6>
+          </li>
+        </ul>
+        <p>{{r.review}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

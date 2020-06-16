@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" routerLink="/bb-home" routerDirection="forward">
+        <ion-icon class="back-icon" slot="icon-only" src='assets/custom-icon-tc-shop/back.svg'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      {{'Account' }}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goToSearchPage()">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="goToCartPage()">
+        <ion-icon class="cart-badge" name="cart"></ion-icon>
+        <ion-badge>0</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <ion-row class="row-img">
+    <img src="assets/template-themes/becrux/icons_stripe.svg" />
+  </ion-row>
+  <ion-row>
+    <div></div>
+  </ion-row>
+  <ion-grid padding>
+    <ion-row size="12">
+      <ion-col>
+        <ion-avatar>
+          <ion-icon class="avatar-icon" name="contact"></ion-icon>
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <h2>{{ 'Login & Register'}}</h2>
+        <p>{{ 'Please login or create an account for free'}}</p>
+        <ion-button class="edit-btn" (click)="openAddAccountPage()">edit profile</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6" class="ion-text-right ion-no-padding">
+        <ion-button (click)="goToCurrencyListPage()" fill="clear">
+          <ion-icon class="icon-custom" src="assets/custom-icon-tc-shop/coin.svg"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="6" class="ion-text-left ion-no-padding">
+        <ion-button (click)="goToLanguage()" fill="clear">
+          <ion-icon class="icon-custom" src="assets/custom-icon-tc-shop/worldwide.svg"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <h2 class="header">My Account</h2>
+  <ion-list class="ion-no-padding">
+    <ion-item class="content-bg-becrux" lines="full" *ngFor="let item of itemList; let i=index" (click)="goToitemLIst(i)">
+      <ion-icon class="item-list-icon" src="{{item.icon}}" slot="start"></ion-icon>
+      <ion-label>
+        <p>{{item.name}}</p>
+      </ion-label>
+      <ion-icon slot="end" class="item-list-icon forward-icon" name="arrow-forward"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <h2 class="header">Help & Support</h2>
+  <ion-list class="ion-no-padding">
+    <ion-item class="content-bg-becrux" lines="full" *ngFor="let item of itemListTwo; let i=index" (click)="goToitemLIstTwo(i)">
+      <ion-icon class="item-list-icon" src="{{item.icon}}" slot="start"></ion-icon>
+      <ion-label>
+        <p>{{item.name}}</p>
+      </ion-label>
+      <ion-icon slot="end" class="item-list-icon forward-icon" name="arrow-forward"></ion-icon>
+    </ion-item>
+    <ion-item class="content-bg-becrux" (click)="openPrivacyPolicyPage()" lines="full">
+      <ion-icon class="item-list-icon" src="assets/custom-icon-tc-shop/privacy-policy.svg" slot="start"></ion-icon>
+      <ion-label>
+        <p>{{"Privacy Policy"|translate}}</p>
+      </ion-label>
+      <ion-icon slot="end" class="item-list-icon forward-icon" name="arrow-forward"></ion-icon>
+    </ion-item>
+    <ion-item class="content-bg-becrux" (click)="openRefundPolicyPage()" lines="full">
+      <ion-icon class="item-list-icon" src="assets/custom-icon-tc-shop/refund-policy.svg" slot="start"></ion-icon>
+      <ion-label>
+        <p>{{"Refund Policy"|translate}}</p>
+      </ion-label>
+      <ion-icon slot="end" class="item-list-icon forward-icon" name="arrow-forward"></ion-icon>
+    </ion-item>
+    <ion-item class="content-bg-becrux" (click)="openTermServicesPage()" lines="full">
+      <ion-icon class="item-list-icon" src="assets/custom-icon-tc-shop/terms.svg" slot="start"></ion-icon>
+      <ion-label>
+        <p>{{"Terms and Services"|translate}}</p>
+      </ion-label>
+      <ion-icon slot="end" class="item-list-icon forward-icon" name="arrow-forward"></ion-icon>
+    </ion-item>
+    <ion-item class="content-bg-becrux" (click)="exit()" lines="full">
+        <ion-icon class="item-list-icon" name="exit" slot="start"></ion-icon>
+        <ion-label>
+          <p>{{"Exit"|translate}}</p>
+        </ion-label>
+        <ion-icon slot="end" class="item-list-icon forward-icon" name="arrow-forward"></ion-icon>
+      </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button size="small" routerLink="/bb-advance-options" routerDirection="forward">
+      <ion-icon src="assets/custom-icon-tc-shop/gear.svg"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-footer>

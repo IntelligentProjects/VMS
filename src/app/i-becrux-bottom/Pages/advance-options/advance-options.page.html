@@ -1,0 +1,156 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button fill="clear" routerLink="/bb-home" routerDirection="forward">
+          <ion-icon class="back-icon" slot="icon-only" src='assets/custom-icon-tc-shop/back.svg'></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title> {{'Pages Layout'| translate }} </ion-title>
+      <ion-buttons slot="end">
+       <ion-button fill="clear" (click)="goToSearchPage()">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+        <ion-button fill="clear" (click)="goToCartPage()">
+          <ion-icon class="cart-badge" name="cart"></ion-icon>
+          <ion-badge>0</ion-badge>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content (pinch)="pinchEvent($event)" class="content-bg-becrux">
+    <ion-row class="row-img">
+      <img src="assets/template-themes/becrux/icons_stripe.svg" />
+    </ion-row>
+    <ion-row>
+      <div></div>
+    </ion-row>
+    <ion-grid padding>
+      <ion-row size="12">
+        <ion-col>
+          <ion-avatar>
+            <ion-icon class="avatar-icon" name="contact"></ion-icon>
+          </ion-avatar>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <h2>{{ 'Choose Multiple Pages Layout Styles
+            for Home, Categories and Shop Pages '}}</h2>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!-- for home -->
+    <ion-item lines="none" (click)="expandItemHome(item)" *ngFor="let item of itemsHome" class="item-main ion-no-padding content-bg-becrux">
+      <ion-grid class="grid ion-no-padding">
+        <ion-row class="row-item ion-no-padding">
+          <ion-col class="ion-align-self-center" size="2">
+            <ion-icon class="icon-list" name="home"></ion-icon>
+          </ion-col>
+          <ion-col class="col-text ion-align-self-center"  size="8">
+            <p class="main-para">
+              {{'Home' | translate}}
+            </p>
+          </ion-col>
+          <ion-col class="ion-align-self-center" size="2">
+            <ion-icon class="icon-list" name="add" *ngIf="!visibleHome"></ion-icon>
+            <ion-icon class="icon-list" name="remove" *ngIf="visibleHome"></ion-icon>
+          </ion-col>
+        </ion-row>
+          <app-menu-component expandHeight="700px" [expanded]="item.expanded" class="ion-no-padding">
+            <ion-item class="item-inner-list content-bg-becrux" lines="full" *ngFor="let list of home;let i = index" (click)="goToHome(i)">
+              <ion-grid class="inner-grid">
+                <ion-row>
+                  <ion-col class="ion-align-self-center" size="2">
+                    <ion-icon class="icon-list"  name="remove"></ion-icon>
+                  </ion-col>
+                  <ion-col class="col-text ion-align-self-center" size="8.3">
+                    <p>{{list.name}}</p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </app-menu-component>
+      </ion-grid>
+    </ion-item>
+    <!-- for category -->
+    <ion-item lines="none" (click)="expandItemCategory(item)" *ngFor="let item of itemsCategory" class="item-main ion-no-padding content-bg-becrux">
+      <ion-grid class="grid ion-no-padding" >
+        <ion-row class="row-item ion-no-padding ">
+          <ion-col class="ion-align-self-center" size="2">
+            <ion-icon class="icon-list" name="apps"></ion-icon>
+          </ion-col>
+          <ion-col class="col-text ion-align-self-center" size="8">
+            <p class="main-para">
+              {{'Category' | translate}}
+            </p>
+          </ion-col>
+          <ion-col class="ion-align-self-center" size="2">
+            <ion-icon class="icon-list" name="add" *ngIf="!visibleCategory"></ion-icon>
+            <ion-icon class="icon-list" name="remove" *ngIf="visibleCategory"></ion-icon>
+          </ion-col>
+        </ion-row>
+          <app-menu-component expandHeight="700px" [expanded]="item.expanded" class="ion-no-padding">
+            <ion-item class="item-inner-list content-bg-becrux" lines="full" *ngFor="let list of category;let i = index" (click)="goToCategory(i)">
+              <ion-grid class="inner-grid">
+                <ion-row>
+                  <ion-col class="ion-align-self-center" size="2">
+                    <ion-icon class="icon-list"  name="remove"></ion-icon>
+                  </ion-col>
+                  <ion-col class="col-text ion-align-self-center" size="8.3">
+                    <p>{{list.name}}</p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </app-menu-component>
+      </ion-grid>
+    </ion-item>
+    <!--  for shop -->
+    <ion-item lines="none" (click)="expandItemShop(item)" *ngFor="let item of itemsShop" class="item-main ion-no-padding content-bg-becrux">
+      <ion-grid class="grid ion-no-padding" >
+        <ion-row class="row-item ion-no-padding">
+          <ion-col class="ion-align-self-center" size="2">
+            <ion-icon class="icon-list" name="cash"></ion-icon>
+          </ion-col>
+          <ion-col class="col-text ion-align-self-center" size="8">
+            <p class="main-para">
+              {{'Shop' | translate}}
+            </p>
+          </ion-col>
+          <ion-col class="ion-align-self-center" size="2">
+            <ion-icon class="icon-list" name="add" *ngIf="!visibleShop"></ion-icon>
+            <ion-icon class="icon-list" name="remove" *ngIf="visibleShop"></ion-icon>
+          </ion-col>
+        </ion-row>
+          <app-menu-component expandHeight="700px" [expanded]="item.expanded" class="ion-no-padding">
+            <ion-item class="item-inner-list content-bg-becrux" lines="full" *ngFor="let list of shop;let i = index" (click)="goToshop(i)">
+              <ion-grid class="inner-grid">
+                <ion-row>
+                  <ion-col class="ion-align-self-center" size="2">
+                    <ion-icon class="icon-list"  name="remove"></ion-icon>
+                  </ion-col>
+                  <ion-col class="col-text ion-align-self-center"  size="8.3">
+                    <p>{{list.name}}</p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </app-menu-component>
+      </ion-grid>
+    </ion-item>
+    <ion-item lines="none" (click)="goToColor()" class="item-main content-bg-becrux item-color" >
+        <ion-grid class="grid ion-no-padding">
+          <ion-row class="row-item ion-no-padding">
+            <ion-col class="ion-align-self-center ion-text-center" size="2">
+              <ion-icon class="icon-list" src="assets/custom-icon-tc-shop/color-brush.svg"></ion-icon>
+            </ion-col>
+            <ion-col class="col-text ion-align-self-center"  size="8">
+              <p class="main-para">
+                {{'Color Theme' | translate}}
+              </p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+  </ion-content>

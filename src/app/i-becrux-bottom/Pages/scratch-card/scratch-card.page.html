@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title no-padding>{{'Scratch Card'|translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <div id="js--sc--container"></div>
+</ion-content>
+<ion-footer>
+    <ion-fab vertical="bottom" horizontal="end">
+      <ion-fab-button size="small" routerLink="/bb-advance-options" routerDirection="forward">
+        <ion-icon src="assets/custom-icon-tc-shop/gear.svg"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-footer>

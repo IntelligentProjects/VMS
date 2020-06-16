@@ -1,0 +1,115 @@
+<!-- For Home-6 -->
+<!-- =========================================================== with name and product -->
+<div class="name" *ngIf="type=='withName'">
+
+  <ion-slides class="animated bounceInRight delay-900ms slide-h6" [options]="sliderConfig" dir="{{shared.dir}}">
+    <ion-slide *ngFor="let p of categories" (click)="goToSubCategories()">
+      <!-- For Real Products -->
+      <ion-card *ngIf="p!=1" >
+        <ion-img class="img-home-six" src="{{p.img}}"></ion-img>
+        <ion-text>
+          <h6 class="name">{{p.name}}</h6>
+          <p class="count">{{p.count}} Products</p>
+        </ion-text>
+      </ion-card>
+      <!-- For Skeleton -->
+      <ion-card *ngIf="p==1">
+        <ion-skeleton-text animated>
+        </ion-skeleton-text>
+        <p>
+          <ion-skeleton-text animated>
+          </ion-skeleton-text>
+        </p>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</div>
+<!-- For Home-7 -->
+<!-- =========================================================== with name and product count -->
+<div class="name-count" *ngIf="type=='name&count'">
+  <ion-slides class="animated bounceInRight delay-900ms" [options]="sliderConfigHomeSix" dir="{{shared.dir}}">
+    <ion-slide *ngFor="let p of categories" (click)="goToSubCategories()">
+      <!-- For Real Products -->
+      <ion-card *ngIf="p!=1" class="card-h7">
+        <ion-avatar>
+          <ion-img src="{{p.img}}"></ion-img>
+        </ion-avatar>
+        <ion-text>
+          <h6 class="name">{{p.name}}</h6>
+          <p class="count">{{p.count}} Products</p>
+        </ion-text>
+      </ion-card>
+      <!-- For Skeleton -->
+      <ion-card *ngIf="p==1" class="skeleton-fome-seven-card">
+        <div class="div">
+          <ion-skeleton-text animated>
+          </ion-skeleton-text>
+        </div>
+        <p class="para">
+          <ion-skeleton-text animated>
+          </ion-skeleton-text>
+        </p>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</div>
+<!-- For Home-8 -->
+<!-- =========================================================== with name and round image -->
+<div class="round" *ngIf="type=='roundImage'">
+  <ion-slides class="animated bounceInRight delay-900ms" [options]="sliderConfig" dir="{{shared.dir}}">
+    <ion-slide *ngFor="let p of categories" (click)="goToSubCategories()">
+      <!-- For Real Products -->
+      <ion-card *ngIf="p!=1" class="card-h8" routerLink="/bs-sub-categories" routerDirection="forward">
+        <ion-avatar>
+          <img src="{{p.img}}" />
+        </ion-avatar>
+        <ion-text>
+          <h6 class="name">{{p.name}}</h6>
+          <p class="count">{{p.count}} Products</p>
+        </ion-text>
+
+      </ion-card>
+      <!-- For Skeleton -->
+      <ion-card *ngIf="p==1" class="card-skeleton-h8">
+        <ion-avatar>
+          <ion-skeleton-text class="skeleton-h8" animated>
+          </ion-skeleton-text>
+        </ion-avatar>
+        <p>
+          <ion-skeleton-text animated>
+          </ion-skeleton-text>
+        </p>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</div>
+
+<!-- // For Home-9 -->
+<!-- =========================================================== with name and round image -->
+<div class="grid" *ngIf="type=='grid'">
+  <ion-grid no-padding class="categories-grid" (click)="goToSubCategories()">
+    <ion-row no-padding>
+      <ion-col size="4" *ngFor="let p of categories " class="animated fadeIn">
+        <ion-card *ngIf="p!=1" class="card-h9">
+          <ion-avatar class="avatar-h9">
+            <img src="{{p.img}}" />
+          </ion-avatar>
+          <ion-text>
+            <h6 class="name">{{p.name}}</h6>
+            <p class="count">{{p.count}} Products</p>
+          </ion-text>
+        </ion-card>
+        <ion-card *ngIf="p==1" class="card-skeleton-h8">
+          <ion-avatar class="skeleton-avatar-h9">
+            <ion-skeleton-text class="skeleton-h8" animated>
+            </ion-skeleton-text>
+          </ion-avatar>
+          <p>
+            <ion-skeleton-text animated>
+            </ion-skeleton-text>
+          </p>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

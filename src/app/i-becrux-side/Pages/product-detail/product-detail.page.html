@@ -1,0 +1,158 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" routerLink="/bs-home" routerDirection="backward">
+        <ion-icon slot="icon-only" src="assets/custom-icon-tc-shop/back.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ecom-title">Shop</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goToCart()">
+        <ion-icon class="cart-badge" name="cart"></ion-icon>
+        <ion-badge color="secondary">0</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <div class="product-tags-top">
+    <div class="product-tag-new">{{'New'|translate}}</div>
+    <!-- <div class="product-tag-featured">{{'Featured'|translate}}</div> -->
+  </div>
+
+  <div class="icons">
+    <ion-icon name="share" (click)="share()"></ion-icon>
+    <ion-icon *ngIf="heart" name="heart" (click)="clickWishList()"></ion-icon>
+    <ion-icon *ngIf="!heart" name="heart-empty" (click)="clickWishList()"></ion-icon>
+  </div>
+  <ion-slides class="product-slides" pager="true">
+    <ion-slide *ngFor="let slide of slides">
+      <div>
+        <img src="{{slide.img}}" imageViewer>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-grid class="product-detail-title ion-no-padding">
+    <ion-row>
+      <!-- <div class="product-tags">
+        <div class="product-tag-off">{{'SALE'|translate}}</div>
+      </div> -->
+      <!-- 2.0 updates -->
+
+      <ion-col class="woo-price-group ion-no-padding" size="12">
+        <!-- <span class="woo-price"></span> -->
+        <span class="woo-price">
+          95.00$</span>
+
+        <!-- <span class="product-outstock">{{'Out of Stock'|translate}}</span> -->
+        <span class="product-instock">{{'In Stock'|translate}}
+          <!-- <span>12</span> -->
+        </span>
+      </ion-col>
+
+      <ion-col class="product-title ion-no-padding" size="12">
+        <h3 class="product-name">Straight Long Coat
+          <br>
+          <small class="product-desc">Women Tops Collection</small>
+        </h3>
+
+        <div class="product-ratings">
+          <ion-row class="product-rating animate" (click)="openReviewsPage()">
+            <ion-col size="0.7">
+              <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col size="0.7">
+              <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col size="0.7">
+              <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col size="0.7">
+              <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col size="0.7">
+              <ion-icon class="light-star" name="star"></ion-icon>
+            </ion-col>
+            <ion-col size="7" class="rating-col">
+              <h6>0{{'Rating & Review'|translate}}</h6>
+            </ion-col>
+          </ion-row>
+        </div>
+        <!-- <p style="display:none;">{{'Total Sales'|translate}}&nbsp;({{product.total_sales}})</p> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="product-detail-header ion-no-padding">
+    <ion-row>
+      <ion-col class="left ion-no-padding" size="6">
+        <ion-row align-items-center>
+          <ion-col class="qty-name" size="12">Quantity</ion-col>
+          <ion-col class="qty-vlue ion-no-padding" size="3">
+            <ion-button (click)="minusQuantity()" size="small" fill="outline">
+              <ion-icon class="icon-btn" name="remove"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col class="qty-vlue ion-no-padding" size="3">
+            <ion-input [(ngModel)]="qtyy" class="dgi" type="number" name="q">
+            </ion-input>
+          </ion-col>
+          <ion-col class="qty-vlue ion-no-padding" size="3">
+            <ion-button (click)="addQuantity()" size="small" fill="outline">
+              <ion-icon class="icon-btn" name="add"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <!-- <ion-col class="right" size="6">
+        <ion-row>
+          <ion-col text-right class="ttl-name" size="12">{{'Total' |translate}}&nbsp;{{'Price' |translate}}</ion-col>
+          <ion-col text-right class="ttl-vlue" size="12">$135.00</ion-col>
+        </ion-row>
+      </ion-col> -->
+    </ion-row>
+    <ion-row>
+      <!-- <button ion-button block color="danger" *ngIf="!product.in_stock">{{'OUT OF STOCK'|translate}}</button> -->
+      <ion-col class="select-col ion-no-padding" size="12">{{'Please select all product options before adding this product to your
+        cart'|translate}}
+      </ion-col>
+    </ion-row>
+  </ion-grid >
+  <ion-grid class="product-description ion-no-padding">
+    <h2>Product Description</h2>
+    <p class="detail-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt purus quis felis vestibulum, sed faucibus
+      nisl
+      consectetur. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum
+      luctus
+      placerat tortor, nec laoreet tortor elementum at. Donec accumsan pharetra est vel porttitor. Ut nibh enim, luctus
+      ut
+      enim sed, dignissim aliquam velit. Nam finibus lorem et metus interdum laoreet. Pellentesque ex elit, ultricies
+      non
+      pharetra et, dignissim sed lorem.</p>
+  </ion-grid>
+  <ion-grid no-padding class="product-detail-content animate-product ion-no-padding">
+    <ion-row no-padding>
+      <ion-col class="ion-no-padding" size="12">
+        <h3 class="related-item">{{'Related Items'|translate}}</h3>
+        <ion-slides class="animated bounceInRight delay-900ms" [options]="sliderConfig">
+          <ion-slide *ngFor="let p of tab1">
+            <app-product [data]="p" [type]="'normal'"></app-product>
+          </ion-slide>
+          <ion-slide>
+            <ion-button class="more-btn" (click)="goToProductPage()" fill="clear"> {{'Shop More'| translate}}
+              <ion-icon class="theme-icon" name="arrow-dropright"></ion-icon>
+            </ion-button>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-button (click)="goToCart()">
+    Add to cart
+  </ion-button>
+</ion-footer>

@@ -1,0 +1,103 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Home
+          </ion-title>
+        <ion-buttons slot="end">
+            <ion-button fill="clear" (click)="goToSearchPage()">
+                <ion-icon slot="icon-only" name="search"></ion-icon>
+            </ion-button>
+            <ion-button fill="clear" (click)="goToCartPage()">
+                <ion-icon class="cart-badge" name="cart"></ion-icon>
+                <ion-badge>0</ion-badge>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+    <app-banner></app-banner>
+
+    <!-- categories swipe slider -->
+    <ion-item lines="none" class="content-bg-becrux">
+        <ion-icon slot="start" src="assets/custom-icon-tc-shop/category.svg"></ion-icon>
+        <ion-label>
+            <p>{{'Categories' | translate }}</p>
+        </ion-label>
+        <ion-button slot="end" routerLink="/bb-products" routerDirection="forward" fill="clear" > Shop More
+            <ion-icon name="play" class="icon-shop-more icon-shop"></ion-icon>
+        </ion-button>
+    </ion-item>
+
+    <!-- categories component -->
+    <app-categories [type]="'grid'"></app-categories>
+
+    <!-- For Products -->
+    <ion-segment [(ngModel)]="segments">
+        <ion-segment-button value="topSeller">{{ 'Newest' | translate }}</ion-segment-button>
+        <ion-segment-button value="deals">{{ 'On Sale' | translate }} </ion-segment-button>
+        <ion-segment-button value="mostLiked"> {{ 'Featured' | translate }}</ion-segment-button>
+    </ion-segment>
+    <div [ngSwitch]="segments">
+
+        <!-- first swipe slider -->
+        <ion-slides *ngSwitchCase="'topSeller'" class="animated bounceInRight delay-900ms" [options]="sliderConfig" dir="{{shared.dir}}">
+            <ion-slide *ngFor="let p of tab1">
+                <app-product [data]="p" [type]="'normal'"></app-product>
+            </ion-slide>
+            <ion-slide>
+                <ion-button routerLink="/bb-products" routerDirection="forward" fill="clear" > {{'Shop More'| translate}}
+                    <ion-icon name="play" class="icon-shop-more"></ion-icon>
+                </ion-button>
+            </ion-slide>
+        </ion-slides>
+
+        <!-- 2nd swipe slider -->
+        <ion-slides *ngSwitchCase="'deals'" class="animated bounceInRight delay-900ms" [options]="sliderConfig" dir="{{shared.dir}}">
+            <ion-slide *ngFor="let p of tab1">
+                <app-product [data]="p" [type]="'normal'"></app-product>
+            </ion-slide>
+            <ion-slide>
+                <ion-button routerLink="/bb-products" routerDirection="forward" fill="clear" > {{'Shop More'| translate}}
+                    <ion-icon name="play" class="icon-shop-more"></ion-icon>
+                </ion-button>
+            </ion-slide>
+        </ion-slides>
+
+        <!-- 3rd swipe slider -->
+        <ion-slides *ngSwitchCase="'mostLiked'" class="animated bounceInRight delay-900ms" [options]="sliderConfig" dir="{{shared.dir}}">
+            <ion-slide *ngFor="let p of tab1">
+                <app-product [data]="p" [type]="'normal'"></app-product>
+            </ion-slide>
+            <ion-slide>
+                <ion-button routerLink="/bb-products" routerDirection="forward" fill="clear" > {{'Shop More'| translate}}
+                    <ion-icon name="play" class="icon-shop-more"></ion-icon>
+                </ion-button>
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+    <!-- For Vendor List -->
+    <app-vendor-list></app-vendor-list>
+
+    <!-- All Products Header -->
+    <ion-item lines="none" class="content-bg-becrux">
+        <ion-icon slot="start" src="assets/custom-icon-tc-shop/tabs.svg"></ion-icon>
+        <ion-label>
+            <p>{{'All Products' | translate }}</p>
+        </ion-label>
+        <ion-button routerLink="/bb-products" routerDirection="forward" slot="end" fill="clear" >Shop More
+            <ion-icon name="play" class="icon-shop-more icon-shop"></ion-icon>
+        </ion-button>
+    </ion-item>
+    <!-- scrolling products component -->
+    <app-scrolling-featured-products [type]="'homeNine'"></app-scrolling-featured-products>
+
+    <!-- For FAB Icon -->
+    <ion-fab vertical="bottom" horizontal="end" *ngIf="scrollTopButton">
+        <ion-fab-button  size="small"  (click)="scrollToTop()">
+            <ion-icon name="arrow-up-outline"></ion-icon>
+          </ion-fab-button>
+    </ion-fab>
+
+</ion-content>

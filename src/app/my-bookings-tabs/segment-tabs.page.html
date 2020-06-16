@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>My Bookings</ion-title>
+  </ion-toolbar>
+  <!-- segment header button  -->
+  <ion-segment [(ngModel)]="segments">
+    <ion-segment-button value="segmentOne" checked>{{ 'Pending' }}</ion-segment-button>
+    <ion-segment-button value="segmentTwo">{{ 'Approved' }} </ion-segment-button>
+    <ion-segment-button value="segmentThree"> {{ 'In Process' }}</ion-segment-button>
+    <ion-segment-button value="segmentFour"> {{ 'Delivered' }}</ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content no-padding>
+  <!-- name of segment to access segment on runtime -->
+  <div [ngSwitch]="segments">
+    <!-- segment One -->
+    <div *ngSwitchCase="'segmentOne'">
+      <ion-list no-padding>
+        <!-- for sliding item  -->
+        <ion-item-sliding *ngFor="let item of items; let i=index">
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-icon name="car"></ion-icon>
+            </ion-avatar>
+            <ion-label>
+              {{'Vehicle-name'}}
+              <p>vehicle number</p>
+              <p>booking at</p>
+              <p>expected date</p>
+              <p>problem..................</p>
+            </ion-label>
+            <p style="color:#FF0000">pending</p>
+            <ion-icon name="arrow-dropright-circle"></ion-icon>
+          </ion-item>
+        </ion-item-sliding>
+      </ion-list>
+    </div>
+    <!-- segment two -->
+    <div *ngSwitchCase="'segmentTwo'">
+      <ion-list no-padding>
+        <!-- for sliding item  -->
+        <ion-item-sliding *ngFor="let item of items; let i=index">
+          <ion-item>
+            <ion-label>
+              {{'Vehicle-name'}}
+              <p>vehicle number</p>
+              <p>booking at</p>
+              <p>expected date</p>
+              <p>problem..................</p>
+            </ion-label>
+            <p style="color:#00FF00">pending</p>
+            <ion-icon name="arrow-dropright-circle"></ion-icon>
+          </ion-item>
+        </ion-item-sliding>
+      </ion-list>
+    </div>
+
+    <!-- segment three -->
+    <div *ngSwitchCase="'segmentThree'">
+      <ion-list no-padding>
+        <!-- for sliding item  -->
+        <ion-item-sliding *ngFor="let item of items; let i=index">
+          <ion-item>
+            <ion-label>
+              {{'Vehicle-name'}}
+              <p>vehicle number</p>
+              <p>booking at</p>
+              <p>expected date</p>
+              <p>problem..................</p>
+            </ion-label>
+            <p style="color:#FF0000">pending</p>
+            <ion-icon name="arrow-dropright-circle"></ion-icon>
+          </ion-item>
+        </ion-item-sliding>
+      </ion-list>
+    </div>
+
+     <!-- segment three -->
+     <div *ngSwitchCase="'segmentFour'">
+      <ion-list no-padding>
+        <!-- for sliding item  -->
+        <ion-item-sliding *ngFor="let item of items; let i=index">
+          <ion-item>
+            <ion-label>
+              {{'Vehicle-name'}}
+              <p>vehicle number</p>
+              <p>booking at</p>
+              <p>expected date</p>
+              <p>problem..................</p>
+            </ion-label>
+            <p style="color:#FF0000">pending</p>
+            <ion-icon name="arrow-dropright-circle"></ion-icon>
+          </ion-item>
+        </ion-item-sliding>
+      </ion-list>
+    </div>
+
+  </div>
+</ion-content>

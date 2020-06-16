@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start">
+      <ion-icon name="menu"></ion-icon>
+    </ion-menu-button>
+    <ion-title class="ecom-title">
+      About Us
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goToSearchPage()">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="goToCartPage()">
+        <ion-icon class="cart-badge" name="cart"></ion-icon>
+        <ion-badge color="secondary">0</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <ion-text class="ion-no-padding">
+    <p [innerHTML]="config.aboutUs">
+    </p>
+  </ion-text>
+  <ion-list class="ion-no-padding">
+    <ion-item class="content-bg-becrux" lines="full" (click)="officiaWebSite()">
+      {{"Official Website"|translate}}
+      <ion-icon class="theme-icon"  name="arrow-forward" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item (click)="showModal('privacyPolicy')" class="content-bg-becrux" lines="full">
+      {{'Privacy Policy'|translate}}
+      <ion-icon class="theme-icon"  name="arrow-forward" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item (click)="showModal('refundPolicy')" class="content-bg-becrux" lines="full">
+      {{'Refund Policy'|translate}}
+      <ion-icon class="theme-icon"  name="arrow-forward" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item (click)="showModal('termServices')" class="content-bg-becrux" lines="none">
+      {{'Term and Services'|translate}}
+      <ion-icon class="theme-icon"  name="arrow-forward" slot="end"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

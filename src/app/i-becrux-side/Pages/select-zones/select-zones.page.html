@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ecom-title">{{'Select Zone'|translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux page-select-zones">
+  <ion-searchbar placeholder="{{'Search'|translate}}" autofocus></ion-searchbar>
+  <ion-list>
+    <!-- <ion-item *ngFor="let item of items" (click)="selectZone(item)">
+      {{ item.name }}
+    </ion-item>
+    <ion-item (click)="selectZone('other')" *ngIf="hideOther()">
+      {{'other'|translate}}
+    </ion-item> -->
+  </ion-list>
+</ion-content>

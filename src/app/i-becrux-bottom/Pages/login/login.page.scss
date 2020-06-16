@@ -1,0 +1,60 @@
+// For toolbar design
+ion-header{
+    ion-toolbar{
+    // --background: black;
+    --color:white;
+    ion-icon{
+        font-size: 23px;
+        margin-top: 4px;    }
+    }
+    }
+    // For image design
+    ion-img{
+    height: 150px;
+    opacity: 0.10;
+    }
+    // For Form
+    form{
+    padding-top: 28px;
+    ion-item{
+    --padding-start: 0;
+    ion-label{
+    color: gray;
+    }
+    &:nth-child(3){
+    height: 33px;
+    ion-label{
+    color:red;
+    }
+    }
+    }
+    ion-button{
+    // --background: black;
+    text-transform: uppercase;
+    --color: white;
+    }
+    }
+    
+    // For Login, Facebook, Register Buttons
+    ion-button{
+    &:nth-child(3){
+    text-transform: capitalize;
+    margin-top: 15px;
+    }
+    &:nth-child(4){
+    margin-top: 15px;
+    --background: #3b5998;
+    --color: white;
+    }
+    &:nth-child(5){
+    // --color: white;
+    margin-top: 20px;
+    // --border-color: black;
+    --border-width: thin;
+    }
+    }
+    .reg-btn{
+        // --background: black !important;
+        --color: white !important;
+        margin-top: 25px !important
+    }

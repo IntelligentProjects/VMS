@@ -1,0 +1,18 @@
+<ion-grid no-padding *ngIf="type=='homeSix'">
+  <ion-row no-padding>
+    <ion-col *ngFor="let p of products" size="6" no-padding>
+      <app-product [data]="p" [type]="'normal'"></app-product>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-grid no-padding *ngIf="type=='homeNine'">
+  <ion-row no-padding>
+    <ion-col *ngFor="let p of featured" size="6" no-padding>
+      <app-product [data]="p" [type]="'normal'"></app-product>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<ion-infinite-scroll #infinite (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll-content></ion-infinite-scroll-content>
+</ion-infinite-scroll>

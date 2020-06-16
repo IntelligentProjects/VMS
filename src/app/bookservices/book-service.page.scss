@@ -1,0 +1,26 @@
+ion-content{
+    div{
+      &:first-child{
+      text-align: center;
+        img{
+          border-radius: 50%;
+          width: 150px;
+          opacity: 0.5;
+        }
+      }
+      &:last-child{
+        width: 80%;
+        position: absolute;
+        margin-top: -50px;
+        ion-avatar{
+          float: right;
+            ion-icon{
+                zoom: 2;
+                }
+            }   
+        }
+    }
+    .para{
+      margin-left: 16px;
+    }
+}

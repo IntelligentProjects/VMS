@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ecom-title">{{'Login'|translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="ion-padding content content-bg-becrux">
+  <ion-img src="assets/template-themes/becrux/icons_stripe.svg"></ion-img>
+
+  <form>
+    <ion-item class="content-bg-becrux">
+      <ion-label position="floating">{{'Email or Username'|translate}}</ion-label>
+      <ion-input type="text" name="email" [(ngModel)]="formData.username" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="content-bg-becrux">
+      <ion-label position="floating">{{'Password'|translate}}</ion-label>
+      <ion-input type="password" name="password" [(ngModel)]="formData.password" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-button expand="full" class="reg-btn" type="submit">{{ 'Login' | translate }}
+    </ion-button>
+
+  </form>
+
+  <ion-button expand="full" fill="clear" (click)="goToForgot()">{{ "I've forgotten my
+    password?" | translate }}</ion-button>
+
+  <ion-button expand="full">{{ 'Login with' | translate }}
+    <ion-icon name="logo-facebook"></ion-icon>
+  </ion-button>
+
+  <ion-button expand="block" fill="outline" (click)="goToSignUp()">{{ 'Register' | translate }}</ion-button>
+
+</ion-content>

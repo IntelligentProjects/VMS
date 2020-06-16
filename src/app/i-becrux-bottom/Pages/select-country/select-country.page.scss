@@ -1,0 +1,17 @@
+ion-header{
+    ion-toolbar{
+        // --background: #51698f;
+        --color:white;
+        ion-icon{
+            zoom: 1.4;
+        }
+    }
+}
+ion-content{
+    ion-searchbar{
+        --background: #fafafa;
+    }
+    ion-list{
+        background: #fafafa;
+    }
+}

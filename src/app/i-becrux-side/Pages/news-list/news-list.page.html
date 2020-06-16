@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start">
+      <ion-icon name="menu"></ion-icon>
+    </ion-menu-button>
+    <ion-title no-padding class="ecom-title">
+      {{'News List'| translate }}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goToSearchPage()">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="goToCartPage()">
+        <ion-icon class="cart-badge" name="cart"></ion-icon>
+        <ion-badge color="secondary">0</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <ion-list>
+    <ion-item lines="full" *ngFor="let post of posts" (click)="showPostDetail(post)" class="animated fadeIn content-bg-becrux">
+      <ion-thumbnail slot="start">
+        <ion-img src="{{post.image}}"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{post.title}}
+          <br>
+          <small>
+            <ion-icon name="clock"></ion-icon>
+            <ion-label>
+              {{post.date}}
+            </ion-label>
+          </small>
+        </h2>
+        <p>{{post.content}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

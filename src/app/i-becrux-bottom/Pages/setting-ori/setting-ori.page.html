@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" routerLink="/bb-home" routerDirection="forward">
+        <ion-icon class="back-icon" slot="icon-only" src='assets/custom-icon-tc-shop/back.svg'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ecom-title">
+      {{'Settings'| translate }}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goToSearchPage()">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="goToCartPage()">
+        <ion-icon class="cart-badge" name="cart"></ion-icon>
+        <ion-badge>0</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <ion-row class="row-img">
+    <img src="assets/template-themes/becrux/icons_stripe.svg" />
+  </ion-row>
+  <ion-row>
+    <div class="div-img"></div>
+  </ion-row>
+  <ion-grid padding>
+    <ion-row size="12">
+      <ion-col>
+        <ion-avatar>
+          <ion-icon class="avatar-icon" name="contact"></ion-icon>
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="login-col">
+        <h2>{{ 'Login/Register' | translate }}</h2>
+        <p>{{ 'Please login or create an account for free' | translate }}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list padding>
+    <ion-item class="content-bg-becrux" lines="inset">
+      <ion-label>
+        <p>{{"Turn on/off Local Notifications"|translate}}</p>
+      </ion-label>
+      <ion-toggle></ion-toggle>
+    </ion-item>
+    <ion-item class="content-bg-becrux" lines="none">
+      <ion-label>
+        <p>{{"Turn on/off Notifications"|translate}}</p>
+      </ion-label>
+      <ion-toggle></ion-toggle>
+    </ion-item>
+  </ion-list>
+  <ion-list padding>
+    <ion-item class="content-bg-becrux" lines="full" (click)="officiaWebSite()">
+      <ion-label>
+        <p>{{"Official Website"|translate}}</p>
+      </ion-label>
+      <ion-icon class="theme-icon" slot="end" name="arrow-forward"></ion-icon>
+    </ion-item>
+    <ion-item class="content-bg-becrux" (click)="openPrivacyPolicyPage()" lines="full">
+      <ion-label>
+        <p>{{"Privacy Policy"|translate}}</p>
+      </ion-label>
+      <ion-icon class="theme-icon" slot="end" name="arrow-forward"></ion-icon>
+    </ion-item>
+    <ion-item class="content-bg-becrux" (click)="openRefundPolicyPage()" lines="full">
+      <ion-label>
+        <p>{{"Refund Policy"|translate}}</p>
+      </ion-label>
+      <ion-icon class="theme-icon" slot="end" name="arrow-forward"></ion-icon>
+    </ion-item>
+    <ion-item class="content-bg-becrux" (click)="openTermServicesPage()" lines="full">
+      <ion-label>
+        <p>{{"Terms and Services"|translate}}</p>
+      </ion-label>
+      <ion-icon class="theme-icon" slot="end" name="arrow-forward"></ion-icon>
+    </ion-item>
+    <ion-item class="content-bg-becrux" (click)="rateUs()" lines="full">
+      <ion-label>
+        <p>{{"Rate Us"|translate}}</p>
+      </ion-label>
+      <ion-icon class="theme-icon" slot="end" name="star-half"></ion-icon>
+    </ion-item>
+    <ion-item class="content-bg-becrux" (click)="share()" lines="full">
+      <ion-label>
+        <p>{{"Share"|translate}}</p>
+      </ion-label>
+      <ion-icon class="theme-icon" slot="end" name="share"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+    <ion-fab vertical="bottom" horizontal="end">
+      <ion-fab-button size="small" routerLink="/bb-advance-options" routerDirection="forward">
+        <ion-icon src="assets/custom-icon-tc-shop/gear.svg"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-footer>

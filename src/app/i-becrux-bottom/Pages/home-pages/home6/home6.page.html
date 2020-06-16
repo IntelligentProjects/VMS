@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goToSearchPage()">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="goToCartPage()">
+        <ion-icon class="cart-badge" name="cart"></ion-icon>
+        <ion-badge>0</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" [scrollEvents]="true" (ionScroll)="onScroll($event)" class="content content-bg-becrux">
+  <app-banner-two></app-banner-two>
+  <!-- categories swipe slider -->
+  <ion-item lines="none" class="content-bg-becrux">
+    <ion-icon slot="start" src="assets/custom-icon-tc-shop/category.svg"></ion-icon>
+    <ion-label>
+      <p>{{'Categories' | translate }}</p>
+    </ion-label>
+    <ion-button routerLink="/bb-products" routerDirection="forward" slot="end" fill="clear" > Shop More
+      <ion-icon class="icon-shop-more" name="play"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <!-- categories component -->
+  <app-categories [type]="'withName'"></app-categories>
+
+  <!-- On Sale Header -->
+  <ion-item lines="none" class="sale-item content-bg-becrux">
+    <ion-icon slot="start" src="assets/custom-icon-tc-shop/dollar-ribbon.svg"></ion-icon>
+    <ion-label>
+      <p>{{'On Sale Products' | translate }}</p>
+    </ion-label>
+    <ion-button slot="end" fill="clear" routerLink="/bb-products" routerDirection="forward" >Shop More
+      <ion-icon class="icon-shop-more" name="play"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <!-- On Sale Products swipe slider -->
+  <ion-slides class="animated bounceInRight delay-900ms" [options]="sliderConfig" dir="{{shared.dir}}">
+    <ion-slide *ngFor="let p of saleItems">
+      <app-product [data]="p" [type]="'normal'"></app-product>
+    </ion-slide>
+  </ion-slides>
+  <!-- banner image -->
+  <ion-img class="single-img" src="assets/template-themes/becrux/images/banner_images/5.png"></ion-img>
+  <!-- All Products Header -->
+  <ion-item lines="none" class="content-bg-becrux">
+    <ion-icon slot="start" src="assets/custom-icon-tc-shop/tabs.svg"></ion-icon>
+    <ion-label>
+      <p>{{'All Products' | translate }}</p>
+    </ion-label>
+    <ion-button routerLink="/bb-products" routerDirection="forward"  slot="end" fill="clear">Shop More
+      <ion-icon name="play" class="icon-shop-more"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <!-- scrolling products component -->
+  <app-scrolling-featured-products [type]="'homeSix'"></app-scrolling-featured-products>
+
+  <!-- fab button to move at top of page  -->
+  <ion-fab vertical="bottom" horizontal="end" *ngIf="scrollTopButton">
+    <ion-fab-button size="small" (click)="scrollToTop()">
+      <ion-icon name="arrow-up-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

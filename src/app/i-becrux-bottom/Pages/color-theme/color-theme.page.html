@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title no-padding class="ecom-title">{{'Theme Color'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content-bg-becrux">
+  <ion-list class="ion-no-padding">
+    <ion-item lines="full" class="black-item" (click)="changeTheme('black')" *ngIf="visiableBtnBlack">
+      Black
+      <ion-icon name="checkmark" slot="end">
+      </ion-icon>
+    </ion-item>
+    <ion-item lines="full" class="black-item" (click)="changeTheme('black')" *ngIf="!visiableBtnBlack">
+      Black
+    </ion-item>
+    <ion-item lines="full" class="red-item" (click)="changeTheme('red')" *ngIf="visiableBtnRed">
+      Red
+      <ion-icon name="checkmark" slot="end">
+      </ion-icon>
+    </ion-item>
+    <ion-item lines="full" class="red-item" (click)="changeTheme('red')" *ngIf="!visiableBtnRed">
+      Red
+    </ion-item>
+    <ion-item lines="full" class="green-item" (click)="changeTheme('green')" *ngIf="visiableBtnGreen">
+      Green
+      <ion-icon name="checkmark" slot="end">
+      </ion-icon>
+    </ion-item>
+    <ion-item lines="full" class="green-item" (click)="changeTheme('green')" *ngIf="!visiableBtnGreen">
+      Green
+    </ion-item>
+    <ion-item lines="full" class="blue-item" (click)="changeTheme('blue')" *ngIf="visiableBtnBlue">
+      Blue
+      <ion-icon name="checkmark" slot="end">
+      </ion-icon>
+    </ion-item>
+    <ion-item lines="full" class="blue-item" (click)="changeTheme('blue')" *ngIf="!visiableBtnBlue">
+      Blue
+    </ion-item>
+    <ion-item lines="full" class="gray-item" (click)="changeTheme('gray')" *ngIf="visiableBtnGray">
+      Gray
+      <ion-icon name="checkmark" slot="end">
+      </ion-icon>
+    </ion-item>
+    <ion-item lines="full" class="gray-item" (click)="changeTheme('gray')" *ngIf="!visiableBtnGray">
+      Gray
+    </ion-item>
+    <ion-item lines="full" class="sharppink-item" (click)="changeTheme('sharpPink')" *ngIf="visiableBtnSharpPink">
+      Sharp Pink
+      <ion-icon name="checkmark" slot="end">
+      </ion-icon>
+    </ion-item>
+    <ion-item lines="full" class="sharppink-item" (click)="changeTheme('sharpPink')" *ngIf="!visiableBtnSharpPink">
+      Sharp Pink
+    </ion-item>
+    <ion-item lines="full" class="lightblue-item" (click)="changeTheme('LightBlue')" *ngIf="visiableBtnLightBlue">
+      Light Blue
+      <ion-icon name="checkmark" slot="end">
+      </ion-icon>
+    </ion-item>
+    <ion-item lines="full" class="lightblue-item" (click)="changeTheme('LightBlue')" *ngIf="!visiableBtnLightBlue">
+      Light Blue
+    </ion-item>
+    <ion-item lines="full" class="orange-item" (click)="changeTheme('orange')" *ngIf="visiableBtnOrange">
+      Orange
+      <ion-icon name="checkmark" slot="end">
+      </ion-icon>
+    </ion-item>
+    <ion-item lines="full" class="orange-item" (click)="changeTheme('orange')" *ngIf="!visiableBtnOrange">
+      Orange
+    </ion-item>
+    <ion-item lines="full" class="brown-item" (click)="changeTheme('brown')" *ngIf="visiableBtnBrown">
+      Brown
+      <ion-icon name="checkmark" slot="end">
+      </ion-icon>
+    </ion-item>
+    <ion-item lines="full" class="brown-item" (click)="changeTheme('brown')" *ngIf="!visiableBtnBrown">
+      Brown
+    </ion-item>
+    <ion-item lines="full" class="deepblue-item" (click)="changeTheme('deepBlue')" *ngIf="visiableBtnDeepBlue">
+      Deep Blue 
+      <ion-icon name="checkmark" slot="end">
+      </ion-icon>
+    </ion-item>
+    <ion-item lines="full" class="deepblue-item" (click)="changeTheme('deepBlue')" *ngIf="!visiableBtnDeepBlue">
+      Deep Blue
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+    <ion-fab vertical="bottom" horizontal="end">
+      <ion-fab-button size="small" routerLink="/bb-advance-options" routerDirection="forward">
+        <ion-icon src="assets/custom-icon-tc-shop/gear.svg"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-footer>

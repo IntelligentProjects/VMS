@@ -1,0 +1,195 @@
+<!-- Home-1 For Segments With Not Image -->
+<ion-segment *ngIf="type=='notImage'" [(ngModel)]="scrollSegments" scrollable>
+  <ion-segment-button (click)="enableLoadingController()" value="all">All</ion-segment-button>
+  <ion-segment-button (click)="enableLoadingController()" value="tops">Tops </ion-segment-button>
+  <ion-segment-button (click)="enableLoadingController()" value="bottoms">Bottoms</ion-segment-button>
+  <ion-segment-button (click)="enableLoadingController()" value="Shirtss"> Shirts</ion-segment-button>
+  <ion-segment-button (click)="enableLoadingController()" value="winter">Winter Wear</ion-segment-button>
+  <ion-segment-button (click)="enableLoadingController()" value="shoes">Shoes</ion-segment-button>
+  <ion-segment-button (click)="enableLoadingController()" value="watches">Watches</ion-segment-button>
+
+  <!-- <ion-infinite-scroll threshold="10px" (ionInfinite)="loadData($event)">
+          <ion-infinite-scroll-content loadingSpinner="lines">
+          </ion-infinite-scroll-content>
+        </ion-infinite-scroll> -->
+</ion-segment>
+<!-- Home-2 For Segments With Image -->
+<ion-segment *ngIf="type=='image'" [(ngModel)]="scrollSegmentsImage" scrollable>
+  <ion-segment-button (click)="enableLoadingController()" value="allImage">
+    <ion-thumbnail>
+      <img src="assets/template-themes/becrux/images/slider-images/1.jpg">
+    </ion-thumbnail>
+    All
+  </ion-segment-button>
+  <ion-segment-button (click)="enableLoadingController()" value="topsImage">
+    <ion-thumbnail>
+      <img src="assets/template-themes/becrux/images/slider-images/2.jpg">
+    </ion-thumbnail> Tops
+  </ion-segment-button>
+  <ion-segment-button (click)="enableLoadingController()" value="bottomsImage">
+    <ion-thumbnail>
+      <img src="assets/template-themes/becrux/images/slider-images/3.jpg">
+    </ion-thumbnail>Bottoms
+  </ion-segment-button>
+  <ion-segment-button (click)="enableLoadingController()" value="shirtssImage">
+    <ion-thumbnail>
+      <img src="assets/template-themes/becrux/images/slider-images/4.png">
+    </ion-thumbnail> Shirts
+  </ion-segment-button>
+  <ion-segment-button (click)="enableLoadingController()" value="winterImage">
+    <ion-thumbnail>
+      <img src="assets/template-themes/becrux/images/slider-images/5.png">
+    </ion-thumbnail> Winter Wear
+  </ion-segment-button>
+  <ion-segment-button (click)="enableLoadingController()" value="shoesImage">
+    <ion-thumbnail>
+      <img src="assets/template-themes/becrux/images/slider-images/6.png">
+    </ion-thumbnail> Shoes
+  </ion-segment-button>
+  <ion-segment-button (click)="enableLoadingController(1)" value="watchesImage">
+    <ion-thumbnail>
+      <img src="assets/template-themes/becrux/images/slider-images/7.jpg">
+    </ion-thumbnail>Watches
+  </ion-segment-button>
+  <!-- <ion-infinite-scroll threshold="10px" (ionInfinite)="loadData($event)">
+            <ion-infinite-scroll-content loadingSpinner="lines">
+            </ion-infinite-scroll-content>
+          </ion-infinite-scroll> -->
+</ion-segment>
+<!-- scrollable segment divisions -->
+<div [ngSwitch]="scrollSegments" *ngIf="visiable">
+  <div *ngSwitchCase="'all'">
+    <ion-grid no-padding>
+      <ion-row no-padding>
+        <ion-col *ngFor="let p of products" size="6" no-padding>
+          <app-product [data]="p" [type]="'normal'"></app-product>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngSwitchCase="'tops'">
+    <ion-grid no-padding>
+      <ion-row no-padding>
+        <ion-col *ngFor="let p of products" size="6" no-padding>
+          <app-product [data]="p" [type]="'normal'"></app-product>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngSwitchCase="'bottoms'">
+    <ion-grid no-padding>
+      <ion-row no-padding>
+        <ion-col *ngFor="let p of products" size="6" no-padding>
+          <app-product [data]="p" [type]="'normal'"></app-product>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngSwitchCase="'shirtss'">
+    <ion-grid no-padding>
+      <ion-row no-padding>
+        <ion-col *ngFor="let p of products" size="6" no-padding>
+          <app-product [data]="p" [type]="'normal'"></app-product>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngSwitchCase="'winter'">
+    <ion-grid no-padding>
+      <ion-row no-padding>
+        <ion-col *ngFor="let p of products" size="6" no-padding>
+          <app-product [data]="p" [type]="'normal'"></app-product>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngSwitchCase="'shoes'">
+    <ion-grid no-padding>
+      <ion-row no-padding>
+        <ion-col *ngFor="let p of products" size="6" no-padding>
+          <app-product [data]="p" [type]="'normal'"></app-product>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngSwitchCase="'watches'">
+    <ion-grid no-padding>
+      <ion-row no-padding>
+        <ion-col *ngFor="let p of products" size="6" no-padding>
+          <app-product [data]="p" [type]="'normal'"></app-product>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>
+<!-- scrollable image segment divisions -->
+<div [ngSwitch]="scrollSegmentsImage" *ngIf="!visiable">
+  <div *ngSwitchCase="'allImage'">
+    <ion-grid no-padding>
+      <ion-row no-padding>
+        <ion-col *ngFor="let p of productsImage" size="6" no-padding>
+          <app-product [data]="p" [type]="'normal'"></app-product>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngSwitchCase="'topsImage'">
+    <ion-grid no-padding>
+      <ion-row no-padding>
+        <ion-col *ngFor="let p of productsImage" size="6" no-padding>
+          <app-product [data]="p" [type]="'normal'"></app-product>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngSwitchCase="'bottomsImage'">
+    <ion-grid no-padding>
+      <ion-row no-padding>
+        <ion-col *ngFor="let p of productsImage" size="6" no-padding>
+          <app-product [data]="p" [type]="'normal'"></app-product>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngSwitchCase="'shirtssImage'">
+    <ion-grid no-padding>
+      <ion-row no-padding>
+        <ion-col *ngFor="let p of productsImage" size="6" no-padding>
+          <app-product [data]="p" [type]="'normal'"></app-product>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngSwitchCase="'winterImage'">
+    <ion-grid no-padding>
+      <ion-row no-padding>
+        <ion-col *ngFor="let p of productsImage" size="6" no-padding>
+          <app-product [data]="p" [type]="'normal'"></app-product>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngSwitchCase="'shoesImage'">
+    <ion-grid no-padding>
+      <ion-row no-padding>
+        <ion-col *ngFor="let p of productsImage" size="6" no-padding>
+          <app-product [data]="p" [type]="'normal'"></app-product>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngSwitchCase="'watchesImage'">
+    <ion-grid no-padding>
+      <ion-row no-padding>
+        <ion-col *ngFor="let p of productsImage" size="6" no-padding>
+          <app-product [data]="p" [type]="'normal'"></app-product>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>
+
+<!-- infinite scroll -->
+<ion-infinite-scroll #infinite (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll-content></ion-infinite-scroll-content>
+</ion-infinite-scroll>

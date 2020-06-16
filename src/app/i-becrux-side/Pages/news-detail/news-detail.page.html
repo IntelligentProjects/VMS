@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" routerLink="/bs-news-list" routerDirection="backward">
+        <ion-icon slot="icon-only" src="assets/custom-icon-tc-shop/back.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title no-padding class="ecom-title">{{'News Details'|translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <!-- <ion-spinner *ngIf="!post.image"></ion-spinner> -->
+  <ion-img [src]="posts.image" class="animated fadeIn"></ion-img>
+
+  <h2>{{posts.title}}
+    <br>
+    <small>
+      <ion-icon class="clock" name="time"></ion-icon>{{posts.date}}
+    </small>
+  </h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt purus quis felis vestibulum, sed faucibus
+    nisl
+    consectetur. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    Vestibulum luctus placerat tortor, nec laoreet tortor elementum at. Donec accumsan pharetra est vel porttitor.
+    Ut nibh enim, luctus ut enim sed, dignissim aliquam velit. Nam finibus lorem et metus interdum laoreet.
+    Pellentesque ex elit, ultricies non pharetra et, dignissim sed lorem.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt purus quis felis vestibulum, sed faucibus
+    nisl
+    consectetur. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    Vestibulum luctus placerat tortor, nec laoreet tortor elementum at. Donec accumsan pharetra est vel porttitor.
+    Ut nibh enim, luctus ut enim sed, dignissim aliquam velit. Nam finibus lorem et metus interdum laoreet.
+    Pellentesque ex elit, ultricies non pharetra et, dignissim sed lorem.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt purus quis felis vestibulum, sed faucibus
+    nisl
+    consectetur. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    Vestibulum luctus placerat tortor, nec laoreet tortor elementum at. Donec accumsan pharetra est vel porttitor.
+    Ut nibh enim, luctus ut enim sed, dignissim aliquam velit. Nam finibus lorem et metus interdum laoreet.
+    Pellentesque ex elit, ultricies non pharetra et, dignissim sed lorem.
+  </p>
+</ion-content>

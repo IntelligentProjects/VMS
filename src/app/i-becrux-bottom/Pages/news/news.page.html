@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" routerLink="/bb-home" routerDirection="forward">
+        <ion-icon class="back-icon" slot="icon-only" src='assets/custom-icon-tc-shop/back.svg'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title no-padding class="ecom-title">
+      {{'News' |translate}}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goToSearchPage()">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="goToCartPage()">
+        <ion-icon class="cart-badge" name="cart"></ion-icon>
+        <ion-badge color="secondary">{{shared.cartquantity}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <!-- *ngIf="post.image" -->
+  <ion-slides pager=true paginationType="bullets" class="animated slideIn" (click)="goToNewsDetail()">
+    <ion-slide *ngFor="let post of featuredPosts" (click)="showPostDetail(post)">
+      <ion-spinner *ngIf="!post.image"></ion-spinner>
+      <ion-img src="{{post.image}}" class="animated fadeIn"></ion-img>
+    </ion-slide>
+  </ion-slides>
+  <!-- top Segments  -->
+  <ion-segment [(ngModel)]="segments">
+    <ion-segment-button value="newest">{{'Newest' |translate}}</ion-segment-button>
+    <ion-segment-button value="categories">{{ 'Categories' | translate }} </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="segments">
+
+    <div *ngSwitchCase="'newest'">
+      <ion-list>
+        <ion-item lines="full" *ngFor="let post of posts" (click)="goToNewsDetail()" class="animated fadeIn content-bg-becrux">
+          <ion-thumbnail slot="start">
+            <ion-img src="{{post.image}}"></ion-img>
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{post.title}}
+              <br>
+              <small>
+                <ion-icon class="clock" name="clock"></ion-icon>
+                <ion-label>
+                  {{post.date}}
+                </ion-label>
+              </small>
+            </h2>
+            <p>{{post.content}}</p>
+          </ion-label>
+        </ion-item>
+        <!-- <ion-infinite-scroll #infinite (ionInfinite)="getPosts($event)">
+          <ion-infinite-scroll-content></ion-infinite-scroll-content>
+        </ion-infinite-scroll> -->
+      </ion-list>
+    </div>
+
+    <div *ngSwitchCase="'categories'">
+      <ion-grid no-padding class="animated fadeIn">
+        <ion-row>
+          <ion-col no-padding size="6" *ngFor="let cat of categories">
+            <ion-card (click)="goToNewsList()">
+              <ion-card-header>
+                <ion-img src="{{cat.image}}"></ion-img>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-card-title>
+                  {{cat.name}}
+                </ion-card-title>
+                <ion-card-subtitle>
+                  {{cat.count}} {{'Posts'|translate}}
+                </ion-card-subtitle>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button size="small" routerLink="/bb-advance-options" routerDirection="forward">
+      <ion-icon src="assets/custom-icon-tc-shop/gear.svg"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-footer>

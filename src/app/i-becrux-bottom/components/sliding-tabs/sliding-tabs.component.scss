@@ -1,0 +1,31 @@
+ion-segment{
+    background: #f9f9f9;
+    ion-segment-button{
+        --indicator-color:lightgray;
+        font-size: 14px;
+        // --indicator-color-checked: black;
+        // --color-checked: black;
+        background: white;
+        --color: #707070;
+        text-transform: capitalize;
+        ion-thumbnail{
+            height: 32px;
+            width: 32px;
+        }
+        img{
+            // width: 32px;
+            height: 45px;
+            padding: 6px;
+            padding-bottom: 16px;
+        }
+    }
+}
+ion-grid{
+    ion-row{
+        margin-right: 10px;
+        
+    }
+}
+.slides{
+    opacity: 0.50;
+}

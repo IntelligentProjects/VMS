@@ -1,0 +1,96 @@
+ion-header{
+    ion-toolbar{
+        // --background:black;
+        --color:white;
+        ion-icon{
+            font-size: 22px;
+        }
+        ion-title{
+            text-align: center;
+            margin-left: 46px;
+        }
+        ion-buttons{
+            ion-icon{
+                font-size: 22px;
+            }
+            ion-badge{
+                position: absolute;
+                right: 3px;
+                bottom: 14px;
+            }
+        }
+    }
+}
+ion-content{
+    ion-slides{
+        // --bullet-background: black;
+        // --bullet-background-active: black;
+    }
+    .swiper-slide {
+        width: 40%;
+      }
+      // if data load
+      ion-segment{
+        background: #ffffff;
+        ion-segment-button{
+            --indicator-color:lightgray;
+            // --indicator-color-checked: black;
+            // --color-checked: black;
+            font-size: 14px;
+            --color: #707070;
+        }
+    }
+    ion-slides{
+        ion-slide{
+            &:last-child{
+                height: auto;
+            }
+        }
+    }
+    app-product{
+        width: 100%;
+    }
+    ion-item{
+        --inner-padding-end: 0;
+        --padding-start: 4px;
+        padding-top: 3px;
+        margin-bottom: -15px;
+        ion-icon{
+            margin-right: 5px;
+            font-size: 14.5px;
+            // color: black;
+            margin-top: 14px;
+            margin-left: 5px;
+        }
+        ion-label{
+            p{
+                margin-top: 0;
+                margin-bottom: -2px;
+                font-size: 16px !important;
+                font-family: "roboto-medium" !important;
+                color: black;
+                margin-left: 5px;
+            }
+        }
+    }
+    ion-grid{
+        ion-row{
+            padding-right: 10px;
+            }
+        }
+        ion-fab{
+            position: fixed;
+            ion-fab-button{
+                // --background: black;
+                --color: white;
+                ion-icon{
+                    font-size: 20px;
+                    color: white
+                }
+            }
+        }
+        .shop-icon{
+            margin: 0 !important;
+        }
+    }
+    

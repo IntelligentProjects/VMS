@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ecom-title">
+      <h1>Categories</h1>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="goToCartPage()">
+        <ion-icon class="cart-badge" name="cart"></ion-icon>
+        <ion-badge>0</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux" (pinch)="pinchEvent($event)">
+  <ion-item-group *ngFor="let product of items">
+    <ion-item-divider lines="none">
+      <ion-avatar slot="end">
+        <img src="{{product.img}}" />
+      </ion-avatar>
+      <ion-label padding>
+        <ion-text>
+          <h2>{{product.name|translate}}</h2>
+        </ion-text>
+      </ion-label>
+    </ion-item-divider>
+    <ion-item *ngFor="let subProduct of product.products" routerLink="/bb-products" routerDirection="forward" class="content-bg-becrux">
+      <ion-avatar slot="end">
+        <img src="{{subProduct.img}}" />
+      </ion-avatar>
+      <ion-label padding>
+        <ion-text>
+          <h2>{{subProduct.name|translate}}</h2>
+          <p>{{subProduct.count}} {{'Products'| translate }}</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-item-group>
+</ion-content>
+<ion-footer>
+    <ion-fab vertical="bottom" horizontal="end">
+      <ion-fab-button size="small" routerLink="/bb-advance-options" routerDirection="forward">
+        <ion-icon src="assets/custom-icon-tc-shop/gear.svg"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-footer>

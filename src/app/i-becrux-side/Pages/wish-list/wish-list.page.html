@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start">
+      <ion-icon name="menu"></ion-icon>
+    </ion-menu-button>
+    <ion-title class="ecom-title">
+      Wishlist
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goToSearchPage()">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="goToCartPage()">
+        <ion-icon class="cart-badge" name="cart"></ion-icon>
+        <ion-badge>0</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <!-- whan data found -->
+  <ion-grid class="data-grid" no-padding *ngIf="gridVisiable">
+    <ion-row no-padding>
+      <ion-col *ngFor="let p of products" size="6" no-padding>
+        <app-product (click)="removeProduct(p.p_id)" [data]="p" [type]="'recent'"></app-product>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- when no data found -->
+  <ion-grid no-padding *ngIf="!gridVisiable">
+    <ion-row no-padding>
+      <ion-col size="12" no-padding>
+        <ion-icon name="heart"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding>
+      <ion-col size="12" no-padding>
+        <h4>{{'Your Wishlist is empty'|translate}}</h4>
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding>
+      <ion-col size="12" no-padding>
+        <p>{{'Continue shopping'|translate}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding>
+      <ion-col size="12" no-padding>
+        <ion-button (click)="openProductsPage()">{{'Explore'|translate}}</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
+
+
+</ion-content>

@@ -1,0 +1,85 @@
+ion-header{
+    ion-toolbar{
+        // --background:black;
+        --color:white;
+        ion-icon{
+            font-size: 22px;
+        }
+        ion-title{
+            text-align: center;
+            margin-left: 46px;
+        }
+        ion-buttons{
+            ion-icon{
+                font-size: 22px;
+            }
+            ion-badge{
+                position: absolute;
+                right: 3px;
+                bottom: 14px;
+            }
+        }
+    }
+}
+ion-content{
+    .swiper-slide {
+        width: 40%;
+      }
+    app-product{
+        width: 100%;
+    }
+    ion-slides{
+        ion-slide{
+            &:last-child{
+                height: auto;
+            }
+        }
+    }
+    ion-item{
+        --inner-padding-end:0;
+        --padding-start: 4px;
+        padding-top: 3px;
+        margin-bottom: -15px;
+        ion-icon{
+            margin-right: 5px;
+            font-size: 14.5px;
+            // color: black;
+            margin-top: 14px;
+            margin-left: 5px;
+        }
+        ion-label{
+            p{
+                margin-top: 0;
+                margin-bottom: -2px;
+                font-size: 16px !important;
+                font-family: "roboto-medium" !important;
+                color: black;
+                margin-left: 5px;
+            }
+        }
+    }
+    ion-grid{
+        ion-row{
+            padding-right: 10px;
+            background: white;
+            ion-col{
+                text-align: center;
+                ion-icon{
+                    // color: black;
+                }
+                p{
+                    margin-top: 2px;
+                    margin-bottom: 2px;
+                }
+            }
+        }
+    }
+    ion-button{
+        margin-right: 0;
+    }
+}
+.icon-shop-more{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-top: -1px !important;
+}

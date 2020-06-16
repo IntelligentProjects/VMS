@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start">
+      <ion-icon name="menu"></ion-icon>
+    </ion-menu-button>
+    <ion-title class="ecom-title">
+      {{'Category'|translate}}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goToSearchPage()">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="goToCartPage()">
+        <ion-icon class="cart-badge" name="cart"></ion-icon>
+        <ion-badge>0</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <ion-grid no-padding>
+    <ion-row no-padding>
+      <ion-col *ngFor="let product of categories" size="6" no-padding>
+        <ion-card routerLink="/bs-products" routerDirection="forward" class="animated flipInX delay-900ms">
+          <ion-avatar>
+            <img src="{{product.img}}" />
+          </ion-avatar>
+          <ion-text>
+            <h6>{{product.name|translate}}</h6>
+            <p>{{product.count}} {{'Products'| translate }}</p>
+          </ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
